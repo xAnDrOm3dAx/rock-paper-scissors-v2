@@ -11,15 +11,18 @@ const options = ["rock", "paper", "scissors"];
 //Math.random always returns a floating point number between 0 and 1. Math.floor(x) returns the value of x rounded down to its nearest integer. Math.random() used with Math.floor() can be used to return random integers. 
 
 function getComputerChoice () {
-    let computerChoice = Math.floor(Math.random() * options.length)
-    console.log(options[computerChoice])
+    const randomIndex = Math.floor(Math.random() * options.length)
+    const computerChoice = options[randomIndex]
+    return computerChoice
 }
 
+console.log(getComputerChoice())
+ // Write a function that plays a single round of Rock Paper Scissors. The function should take two parameters - the playerSelection and computerSelection - and then return a string that declares the winner of the round like so: "You Lose! Paper beats Rock"
+ 
 
 
- 
- // Write a function that plays a single round of Rock Paper Scissors. The function should take two parameters - the playerSelection and computerSelection 
- 
+
+
  
 // Write a function which returns a string that declares the winner of the round like so: "You Lose! Paper beats Rock". Make your function’s playerSelection parameter case-insensitive (so users can input rock, ROCK, RocK or any other variation).
 
