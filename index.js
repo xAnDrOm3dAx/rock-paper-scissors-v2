@@ -10,6 +10,12 @@ const options = ["rock", "paper", "scissors"];
 // Create a function called getComputerChoice that will randomly return either ‘Rock’, ‘Paper’ or ‘Scissors’. 
 //Math.random always returns a floating point number between 0 and 1. Math.floor(x) returns the value of x rounded down to its nearest integer. Math.random() used with Math.floor() can be used to return random integers. 
 
+function getComputerChoice () {
+    let computerChoice = Math.floor(Math.random() * options.length)
+    console.log(options[computerChoice])
+}
+
+
 
  
  // Write a function that plays a single round of Rock Paper Scissors. The function should take two parameters - the playerSelection and computerSelection 
@@ -23,4 +29,3 @@ const options = ["rock", "paper", "scissors"];
 
 
 //Write a NEW function called game(). Use the previous function inside of this one to play a 5 round game that keeps score and reports a winner or loser at the end.
-
