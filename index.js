@@ -1,19 +1,20 @@
 
-//--------------------Step One--------------------------
 // Randomly generate Rock, Paper or Scissors
 
 function getComputerChoice() {
-    const weapons = ["Rock", "Paper", "Scissors"];
+    const weapons = ["rock", "paper", "scissors"];
     const randomWeapon = weapons[Math.floor(Math.random() * weapons.length)]
     return randomWeapon;
 }
 
 console.log(getComputerChoice());
 
+// Initialize scores at 0
 
-//---------------------Step Two-------------------------
-// Play a single round of the game (this is the game logic)
+let playerScore = 0
+let computerScore = 0 
 
+// Play a single round of the game
 
 
 //--------------------Final Part------------------------
