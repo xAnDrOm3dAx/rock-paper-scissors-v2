@@ -7,15 +7,11 @@ function getComputerChoice() {
     return randomWeapon;
 }
 
-// Initialize scores at 0
-
-let playerScore = 0
-let computerScore = 0 
-
-
-// Play a single round of the game
+// Play a single round of the game and define the possible outcomes
 
 function playRound(playerSelection, computerSelection) {
+// Convert playerSelection to lowercase
+  playerSelection = playerSelection.toLowerCase();
     if (playerSelection === computerSelection) {
         return `Both players chose ${playerSelection}, it's a tie!`;
     } else if (playerSelection === "rock" && computerSelection === "scissors") {
@@ -34,13 +30,18 @@ function playRound(playerSelection, computerSelection) {
 }
 
 
-
 // Play the game 5 times per round
 
 function game() {
     for (let i = 0; i < 5; i++) {
-        let playerSelection = prompt ("Please choose rock, paper, or scissors").toLowerCase();
+        let playerSelection = prompt ("Please choose rock, paper, or scissors");
         let computerSelection = getComputerChoice()
+        
+// Initialize scores at 0 and increment when playing
+        let playerScore = 0
+        let computerScore = 0
+        
+
         console.log("-----------------------------------");
         console.log("Computer:" + " " + computerSelection);
         console.log("-----------------------------------");
