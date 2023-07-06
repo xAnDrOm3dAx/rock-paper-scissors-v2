@@ -36,18 +36,20 @@ function playRound(playerSelection, computerSelection) {
 }
 
 
-const playerSelection = "rock";
-const computerSelection = getComputerChoice();
-console.log("Computer:" + " " + computerSelection);
-console.log("Player:" + " " + playerSelection);
-console.log(playRound(playerSelection, computerSelection));
 
 
 
 // //--------------------Final Part------------------------
 // // Play the game 5 times for a round
 
+for (let i = 0; i < 5; i++) {
+    let playerSelection = prompt ("PLease choose rock, paper, or scissors");
+    let computerSelection = getComputerChoice()
+    console.log("Computer:" + " " + computerSelection);
+    console.log("Player:" + " " + playerSelection);
+    console.log(playRound(playerSelection, computerSelection))
 
+}
 
 
 
