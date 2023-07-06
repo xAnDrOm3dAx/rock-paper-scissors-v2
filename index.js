@@ -15,15 +15,13 @@ let computerScore = 0
 
 // Play a single round of the game
 
-// Version 1
-
 function playRound(playerSelection, computerSelection) {
     if (playerSelection === computerSelection) {
         return `Both players chose ${playerSelection}, it's a tie!`;
     } else if (playerSelection === "rock" && computerSelection === "scissors") {
         return "Rock obliterates scissors, Player wins!";
     } else if (playerSelection === "scissors" && computerSelection === "rock") {
-        return "Rock obliterates scissors, Computer wins!!";
+           return "Rock obliterates scissors, Computer wins!!";
     } else if (playerSelection === "scissors" && computerSelection === "paper") {
         return "Scissors shreds paper, Player wins!";
     } else if (playerSelection === "paper" && computerSelection === "scissors") {
@@ -37,23 +35,27 @@ function playRound(playerSelection, computerSelection) {
 
 
 
+// Play the game 5 times per round
 
-
-// //--------------------Final Part------------------------
-// // Play the game 5 times for a round
-
-for (let i = 0; i < 5; i++) {
-    let playerSelection = prompt ("PLease choose rock, paper, or scissors");
-    let computerSelection = getComputerChoice()
-    console.log("Computer:" + " " + computerSelection);
-    console.log("Player:" + " " + playerSelection);
-    console.log(playRound(playerSelection, computerSelection))
-
+function game() {
+    for (let i = 0; i < 5; i++) {
+        let playerSelection = prompt ("Please choose rock, paper, or scissors").toLowerCase();
+        let computerSelection = getComputerChoice()
+        console.log("-----------------------------------");
+        console.log("Computer:" + " " + computerSelection);
+        console.log("-----------------------------------");
+        console.log("Player:" + " " + playerSelection);
+        console.log("-----------------------------------");
+        console.log(playRound(playerSelection, computerSelection))
+    }
 }
 
+// Invoke game function
+
+game()
 
 
-
+// Score totals
 
 // console.log("Computer Score" + " " + computerScore);
 // console.log("Player Score" + " " + playerScore);
