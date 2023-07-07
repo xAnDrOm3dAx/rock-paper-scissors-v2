@@ -54,6 +54,20 @@ function game() {
 
 }
 
+// Tally the scores and announce the winner
+
+if (result.includes("PLayer wins!")) {
+    playerScore++
+} else if (result.includes("Computer wins!")) {
+    computerScore++
+}
+
+console.log(`Player Score: ${playerScore}`)
+console.log("-----------------------------------");
+console.log(`Computer Score: ${computerScore}`)
+
+}
+
 // Invoke game function
 
 game()
