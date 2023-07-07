@@ -41,6 +41,7 @@ function game() {
     for (let round = 1; round <= 5; round++) {
         const playerSelection = prompt ("Please choose rock, paper, or scissors").toLowerCase();
         const computerSelection = getComputerChoice()
+
     
 
         const result = playRound(playerSelection, computerSelection)
@@ -52,20 +53,19 @@ function game() {
         console.log("Player:" + " " + playerSelection);
         console.log("-----------------------------------");
 
-}
-
 // Tally the scores and announce the winner
 
-if (result.includes("PLayer wins!")) {
-    playerScore++
-} else if (result.includes("Computer wins!")) {
-    computerScore++
-}
+        if (result.includes("Player wins!")) {
+            playerScore++
+        } else if (result.includes("Computer wins!")) {
+            computerScore++
+        }
+        
+        console.log(`Player Score: ${playerScore}`)
+        console.log("-----------------------------------");
+        console.log(`Computer Score: ${computerScore}`)
 
-console.log(`Player Score: ${playerScore}`)
-console.log("-----------------------------------");
-console.log(`Computer Score: ${computerScore}`)
-
+    }
 }
 
 // Invoke game function
