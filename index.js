@@ -39,7 +39,7 @@ function game() {
 // Play the game 5 times per round
 
     for (let round = 1; round <= 5; round++) {
-        const playerSelection = prompt ("Please choose rock, paper, or scissors").toLowerCase();
+        const playerSelection = prompt ("Please choose rock, paper, or scissors");
         const computerSelection = getComputerChoice()
 
     
