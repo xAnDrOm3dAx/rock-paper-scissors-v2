@@ -77,7 +77,7 @@ function getPlayerChoice() {
 function game() {
     let computerScore = 0;
     let playerScore = 0;
-    console.log("Welcome! Please make your selection. Best of 5 rounds wins the game");
+    console.log("Welcome! Please make your selection. Best of 5 rounds wins the game.");
     console.log("-------------------------------------------");
     
     for (let round = 1; round <= 5; round++) {
