@@ -1,11 +1,19 @@
+// Create a variable that holds the values of ‘Rock’, ‘Paper’ or ‘Scissors’ within an array.
+
+const weapons = ["rock", "paper", "scissors"];
 
 // Randomly generate Rock, Paper or Scissors
 
 function getComputerChoice() {
-    const weapons = ["rock", "paper", "scissors"];
     const randomWeapon = weapons[Math.floor(Math.random() * weapons.length)]
     return randomWeapon;
 }
+
+
+// Create function called getPlayerChoice that will validate the user input 
+
+
+
 
 // Play a single round of the game and define the possible outcomes
 
@@ -35,37 +43,47 @@ function game() {
 
     let playerScore = 0
     let computerScore = 0
-
-// Play the game 5 times per round
-
-    for (let round = 1; round <= 5; round++) {
-        const playerSelection = prompt ("Please choose rock, paper, or scissors");
-        const computerSelection = getComputerChoice()
+    console.log("Welcome! Please make your selection. Best of 5 rounds wins the game.");
 
     
+// Play a single round of the game and define the possible outcomes
 
+    for (let round = 1; round <= 5; round++) {
+        let playerSelection = prompt ("Please choose rock, paper, or scissors");
+        while (!weapons.includes(playerSelection)) {
+            playerSelection = prompt ("Entry invalid! Please choose rock, paper, or scissors");
+        }
+        
+        const computerSelection = getComputerChoice()
         const result = playRound(playerSelection, computerSelection)
-        console.log("-----------------------------------");
-        console.log(`Round ${round}: ${result}`);
-        console.log("-----------------------------------");
-        console.log("Computer:" + " " + computerSelection);
-        console.log("-----------------------------------");
-        console.log("Player:" + " " + playerSelection);
-        console.log("-----------------------------------");
-
-// Tally the scores and announce the winner
 
         if (result.includes("Player wins!")) {
             playerScore++
         } else if (result.includes("Computer wins!")) {
             computerScore++
         }
-        
-        console.log(`Player Score: ${playerScore}`)
+
         console.log("-----------------------------------");
+        console.log(`Round ${round}`);
+        console.log("Computer chose:" + " " + computerSelection);
+        console.log("Player chose:" + " " + playerSelection);
+        console.log(`${result}`);
+        console.log(`Player Score: ${playerScore}`)
         console.log(`Computer Score: ${computerScore}`)
 
+
     }
+            if (playerScore > computerScore) {
+                console.log("-----------------------------------");
+                console.log("Game Over. Player wins!")
+            } else if (computerScore > playerScore) {
+                console.log("-----------------------------------");
+                console.log("Game Over. Computer wins!")
+            } else {
+                console.log("-----------------------------------");
+                console.log("Game Over! It's a tie, please try again");
+            }
+        
 }
 
 // Invoke game function
