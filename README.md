@@ -22,8 +22,32 @@ Onwards and upwards.
 
 ## Discord Feedback
 
-Great job 😄
-In getPlayerChoice if you return in the loop you probably don't need to set playerInput to true.
-And in game when incrementing the scores you can just check on Player or Computer given how you send the result.
+1. Great job 😄
+   In getPlayerChoice if you return in the loop you probably don't need to set playerInput to true.
+   And in game when incrementing the scores you can just check on Player or Computer given how you send the result.
 
 But these are very minor and this RPS is really good 😁
+
+2. Semicolons ; you neglect adding them, and while it's true that your code will probably work just fine without them we still add them for the edge cases where it doesn't work.
+
+lines 25-26:
+playerInput = true;
+return inputInLower
+
+you change the playerInput value to true to stop the while loop from running but in the line afterwards you exit the function completely with the return statement, changing the playerInput is redundant.
+
+lines 87-93:
+console.log("-----------------------------------");
+console.log(`Round ${round}`);
+console.log("Computer chose:" + " " + computerSelection);
+console.log("Player chose:" + " " + playerSelection);
+console.log(`${result}`);
+console.log(`Player Score: ${playerScore}`)
+console.log(`Computer Score: ${computerScore}`)
+
+you mix up several ways of printing variables, sometimes you use back ticks and some times you're adding strings together. pick one and be consistent with it, back ticks should give you the best readability for printing text with variables.
+
+lines 67-75, if it's not needed and you decided to go with other solution then delete it it's just noise.
+
+Beside those small things (and they're indeed small things) the code looks good, well organized, the variables have good and clear names and the logic is very straight forward and easy to follow well done @Christopher Werkmeister ++ 🙂
+There's dedicated channels for feedback ⁠creations-showcase ⁠feedback-trading so consider those for next projects 🙂
