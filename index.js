@@ -15,18 +15,18 @@ function getComputerChoice() {
 
 function getPlayerChoice() {
     let playerInput = false;
-    while(playerInput === false) {
-        const input = prompt ("Please choose rock, paper, or scissors");
-        if (input === null) {
-            continue;
-        } 
-        const inputInLower = input.toLowerCase();
-        if (weapons.includes(inputInLower)) {
-            playerInput = true;
-            return inputInLower
-        }
+    while (playerInput === false) {
+      const input = prompt("Please choose rock, paper, or scissors");
+      if (input === null) {
+        continue
+      }
+      const inputInLower = input.toLowerCase();
+      if (weapons.includes(inputInLower)) {
+        playerInput = true;
+        return inputInLower
+      }
     }
-}
+  }
 
 
 // Play a single round of the game and define the possible outcomes
@@ -108,3 +108,13 @@ function game() {
 // Invoke game function
 
 game()
+
+
+// Consider an end game function that can be used to exit the game at any time using the cancel button on the window prompt.
+
+// function endGame() {
+//     console.log("-----------------------------------");
+//     console.log("Game Over! Player has left the game");
+//     console.log("-----------------------------------");
+// }
+
