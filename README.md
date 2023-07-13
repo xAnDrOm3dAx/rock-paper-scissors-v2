@@ -19,3 +19,11 @@ Phew - that was a mission! I started this challenege feeling quite overwhelmed. 
 I am still very much struggling with breaking down the problem, writing pseudocode and understanding Javascript concepts and when to use them. #workinprogress
 
 Onwards and upwards.
+
+## Discord Feedback
+
+Great job 😄
+In getPlayerChoice if you return in the loop you probably don't need to set playerInput to true.
+And in game when incrementing the scores you can just check on Player or Computer given how you send the result.
+
+But these are very minor and this RPS is really good 😁
