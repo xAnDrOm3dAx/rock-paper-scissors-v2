@@ -19,7 +19,7 @@ function getPlayerChoice() {
         const input = prompt ("Please choose rock, paper, or scissors");
         if (input === null) {
             continue;
-        }
+        } 
         const inputInLower = input.toLowerCase();
         if (weapons.includes(inputInLower)) {
             playerInput = true;
@@ -38,7 +38,7 @@ function playRound(playerSelection, computerSelection) {
     } else if (playerSelection === "rock" && computerSelection === "scissors") {
         return "Rock obliterates scissors, Player wins!";
     } else if (playerSelection === "scissors" && computerSelection === "rock") {
-           return "Rock obliterates scissors, Computer wins!!";
+           return "Rock obliterates scissors, Computer wins!";
     } else if (playerSelection === "scissors" && computerSelection === "paper") {
         return "Scissors shreds paper, Player wins!";
     } else if (playerSelection === "paper" && computerSelection === "scissors") {
