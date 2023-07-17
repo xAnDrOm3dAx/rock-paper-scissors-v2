@@ -40,13 +40,21 @@ function game() {
 
   let playerScore = 0;
   let computerScore = 0;
-  console.log(
-    "Welcome! Please make your selection. Best of 5 rounds wins the game."
-  );
+  console.log("Welcome! Please make your selection. Best of 5 rounds wins the game.");
 
   // Play the game 5 times per round, increment the winner score by one, log the choices and total score for player and computer on each round.
 
   for (let round = 1; round <= 5; round++) {
+    const playerSelection = "rock"; // Validate user input with get player choice
+    const computerSelection = getComputerChoice();
+    const result = playRound(playerSelection, computerSelection);
+
+    if (result.includes("Player")) {
+      playerScore++;
+    } else if (result.includes("Computer")) {
+      computerScore++;
+    }
+
     console.log("-----------------------------------");
     console.log(`Round ${round}`);
     console.log("Computer chose:" + " " + `${computerSelection}`);
@@ -55,7 +63,8 @@ function game() {
     console.log(`Player Score: ${playerScore}`);
     console.log(`Computer Score: ${computerScore}`);
   }
-}
+
+ 
 
 // Invoke game function
 
