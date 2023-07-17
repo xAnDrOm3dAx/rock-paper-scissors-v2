@@ -9,7 +9,7 @@ function getComputerChoice() {
   return randomIndex;
 }
 
-// Create function called getPlayerChoice that will ask the user to choose and then validate the input
+// Create function called getPlayerChoice that will ask the user to choose and then validate the input. Convert Input to lower.
 
 function getPlayerChoice() {
   let playerChoice = false;
