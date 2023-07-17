@@ -11,7 +11,19 @@ function getComputerChoice() {
 
 // Create function called getPlayerChoice that will ask the user to choose and then validate the input
 
-function getPlayerChoice() {}
+function getPlayerChoice() {
+  let playerChoice = false;
+  while (playerChoice === false) {
+    const playerInput = prompt("Please choose rock, paper, or scissors");
+    if (playerInput === null) {
+      continue;
+    }
+    const playerInputInLower = playerInputInLower.toLowerCase();
+    if (choices.includes(playerInputInLower)) {
+      return playerInputInLower;
+    }
+  }
+}
 
 // Play a single round of the game and define the possible outcomes
 
