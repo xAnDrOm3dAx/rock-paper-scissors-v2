@@ -76,8 +76,8 @@ function game() {
 
         console.log("-----------------------------------");
         console.log(`Round ${round}`);
-        console.log("Computer chose:" + " " + computerSelection);
-        console.log("Player chose:" + " " + playerSelection);
+        console.log("Computer chose:" + " " + `${computerSelection}`);
+        console.log("Player chose:" + " " + `${playerSelection}`);
         console.log(`${result}`);
         console.log(`Player Score: ${playerScore}`);
         console.log(`Computer Score: ${computerScore}`);
@@ -94,6 +94,7 @@ function game() {
                 console.log("Game Over! It's a tie, please try again");
             }
 }
+
 
 // Invoke game function
 
