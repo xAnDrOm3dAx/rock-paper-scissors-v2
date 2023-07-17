@@ -18,7 +18,7 @@ function getPlayerChoice() {
     if (playerInput === null) {
       continue;
     }
-    const playerInputInLower = playerInputInLower.toLowerCase();
+    const playerInputInLower = playerInput.toLowerCase();
     if (choices.includes(playerInputInLower)) {
       return playerInputInLower;
     }
@@ -57,7 +57,7 @@ function game() {
   // Play the game 5 times per round, increment the winner score by one, log the choices and total score for player and computer on each round.
 
   for (let round = 1; round <= 5; round++) {
-    const playerSelection = "rock"; // Validate user input with get player choice
+    const playerSelection = getPlayerChoice(); // Validate user input with get player choice
     const computerSelection = getComputerChoice();
     const result = playRound(playerSelection, computerSelection);
 
