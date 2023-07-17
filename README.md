@@ -50,4 +50,5 @@ you mix up several ways of printing variables, sometimes you use back ticks and 
 lines 67-75, if it's not needed and you decided to go with other solution then delete it it's just noise.
 
 Beside those small things (and they're indeed small things) the code looks good, well organized, the variables have good and clear names and the logic is very straight forward and easy to follow well done @Christopher Werkmeister ++ 🙂
+
 There's dedicated channels for feedback ⁠creations-showcase ⁠feedback-trading so consider those for next projects 🙂
