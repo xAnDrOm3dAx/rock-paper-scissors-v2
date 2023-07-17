@@ -6,7 +6,7 @@ const weapons = ["rock", "paper", "scissors"];
 // Create function called getComputerChoice that will randomly return either ‘Rock’, ‘Paper’ or ‘Scissors’. 
 
 function getComputerChoice() {
-    const randomWeapon = weapons[Math.floor(Math.random() * weapons.length)]
+    const randomWeapon = weapons[Math.floor(Math.random() * weapons.length)];
     return randomWeapon;
 }
 
@@ -18,12 +18,12 @@ function getPlayerChoice() {
     while (playerInput === false) {
       const input = prompt("Please choose rock, paper, or scissors");
       if (input === null) {
-        continue
+        continue;
       }
       const inputInLower = input.toLowerCase();
       if (weapons.includes(inputInLower)) {
-        playerInput = true;
-        return inputInLower
+        // playerInput = true;
+        return inputInLower;
       }
     }
   }
@@ -57,31 +57,21 @@ function game() {
 
 // Initialize scores at 0 and increment when playing
 
-    let playerScore = 0
-    let computerScore = 0
+    let playerScore = 0;
+    let computerScore = 0;                                                                                    
     console.log("Welcome! Please make your selection. Best of 5 rounds wins the game.");
 
     
 // Play the game 5 times per round, increment the winner score by one, log the choices and total score for player and computer on each round.
 
-// Decided to scrap this for / while loop to create a function called getPlayerChoice() which validates the user input and returns input in lowercase.
-// for (let round = 1; round <= 5; round++) {
-//     let playerSelection = prompt ("Please choose rock, paper, or scissors");
-//     while (!weapons.includes(playerSelection)) {
-//         playerSelection = prompt ("Entry invalid! Please choose rock, paper, or scissors");
-//         if (playerSelection === null) {
-//             continue;
-//         }
-//     }
-
     for (let round = 1; round <= 5; round++) {
-        const playerSelection = getPlayerChoice()
-        const computerSelection = getComputerChoice()
-        const result = playRound(playerSelection, computerSelection)
+        const playerSelection = getPlayerChoice();
+        const computerSelection = getComputerChoice();
+        const result = playRound(playerSelection, computerSelection);
         if (result.includes("Player wins!")) {
-            playerScore++
+            playerScore++;
         } else if (result.includes("Computer wins!")) {
-            computerScore++
+            computerScore++;
         }
 
         console.log("-----------------------------------");
@@ -89,16 +79,16 @@ function game() {
         console.log("Computer chose:" + " " + computerSelection);
         console.log("Player chose:" + " " + playerSelection);
         console.log(`${result}`);
-        console.log(`Player Score: ${playerScore}`)
-        console.log(`Computer Score: ${computerScore}`)
+        console.log(`Player Score: ${playerScore}`);
+        console.log(`Computer Score: ${computerScore}`);
     }
 
             if (playerScore > computerScore) {
                 console.log("-----------------------------------");
-                console.log("Game Over. Player wins!")
+                console.log("Game Over. Player wins!");
             } else if (computerScore > playerScore) {
                 console.log("-----------------------------------");
-                console.log("Game Over. Computer wins!")
+                console.log("Game Over. Computer wins!");
             } else {
                 console.log("-----------------------------------");
                 console.log("Game Over! It's a tie, please try again");
@@ -107,14 +97,4 @@ function game() {
 
 // Invoke game function
 
-game()
-
-
-// Consider an end game function that can be used to exit the game at any time using the cancel button on the window prompt.
-
-// function endGame() {
-//     console.log("-----------------------------------");
-//     console.log("Game Over! Player has left the game");
-//     console.log("-----------------------------------");
-// }
-
+game();
