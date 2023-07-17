@@ -6,7 +6,8 @@ const choices = ["rock", "paper", "scissors"];
 // Create function called getComputerChoice that will randomly return either ‘Rock’, ‘Paper’ or ‘Scissors’. 
 
 function getComputerChoice() {
-
+    const randomIndex = Math.floor(Math.random() * choices.length)
+    return randomIndex;
 }
 
 console.log(getComputerChoice());
