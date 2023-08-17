@@ -1,0 +1,89 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body,
+button {
+  background-color: #345472;
+  color: white;
+  font-family: "Dosis", sans-serif;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-image: linear-gradient(to bottom, #09203f 0%, #537895 100%);
+}
+
+h1 {
+  font-size: 4rem;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+h2 {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+h3 {
+  font-size: 2rem;
+  text-align: center;
+  margin: 30px;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  text-align: center;
+}
+
+button {
+  border: 3px solid white;
+  border-radius: 10px;
+  font-size: 1.5rem;
+  width: 100px;
+  height: 50px;
+}
+
+.rules {
+  margin-bottom: 30px;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.results {
+  text-align: center;
+  font-size: 1.5rem;
+  margin-bottom: 50px;
+}
+
+.game-over {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+  border: 3px solid #fff;
+  border-radius: 15px;
+  padding: 15px;
+  margin: 15px;
+  gap: 30px;
+}
+
+/* Media query for  with max width 768px (typical breakpoint for mobile devices) */
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 3rem;
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+}
