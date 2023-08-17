@@ -21,20 +21,18 @@ body {
 
 h1 {
   font-size: 4rem;
-  margin-top: 30px;
-  margin-bottom: 20px;
+  margin: 30px 0;
   text-align: center;
 }
 
-h2 {
-  font-size: 2rem;
-  text-align: center;
-  margin-bottom: 20px;
-}
-
+h2,
 h3 {
   font-size: 2rem;
   text-align: center;
+  margin: 0px 30px 30px;
+}
+
+h3 {
   margin: 30px;
 }
 
@@ -48,21 +46,21 @@ h3 {
 button {
   border: 3px solid white;
   border-radius: 10px;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   width: 100px;
   height: 50px;
 }
 
 .rules {
   margin-bottom: 30px;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   text-align: center;
 }
 
 .results {
   text-align: center;
-  font-size: 1.5rem;
-  margin-bottom: 50px;
+  font-size: 1.3rem;
+  margin-bottom: 30px;
 }
 
 .game-over {
@@ -70,7 +68,7 @@ button {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-size: 3rem;
+  font-size: 2.5rem;
   border: 3px solid #fff;
   border-radius: 15px;
   padding: 15px;
@@ -85,5 +83,20 @@ button {
     font-size: 3rem;
     margin-top: 20px;
     margin-bottom: 10px;
+  }
+
+  h2,
+  h3 {
+    font-size: 1.5rem;
+    text-align: center;
+    margin: 0px 30px 30px;
+  }
+
+  h3 {
+    margin: 30px;
+  }
+
+  .game-over {
+    font-size: 2rem;
   }
 }
