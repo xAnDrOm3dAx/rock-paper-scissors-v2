@@ -3,7 +3,32 @@
 const rockButton = document.querySelector(".rock");
 const paperButton = document.querySelector(".paper");
 const scissorsButton = document.querySelector(".scissors");
-const outcomeHeading = document.querySelector(".win-or-lose");
+const buttons = document.querySelector(".buttons");
+const outcomeText = document.querySelector(".win-or-lose");
+const playerScoreDisplay = document.querySelector(".player-score");
+const computerScoreDisplay = document.querySelector(".computer-score");
+
+//  Add event listeners for individual RPS buttons.
+rockButton.addEventListener("click", () => {
+  computerSelection = getComputerChoice();
+  const playerSelection = "rock";
+  playRound(playerSelection, computerSelection);
+  checkForWinner();
+});
+
+scissorsButton.addEventListener("click", () => {
+  computerSelection = getComputerChoice();
+  const playerSelection = "scissors";
+  playRound(playerSelection, computerSelection);
+  checkForWinner();
+});
+
+paperButton.addEventListener("click", () => {
+  computerSelection = getComputerChoice();
+  const playerSelection = "paper";
+  playRound(playerSelection, computerSelection);
+  checkForWinner();
+});
 
 // Create a variable that holds the values of ‘Rock’, ‘Paper’ or ‘Scissors’ within an array.
 
@@ -22,98 +47,98 @@ function getComputerChoice() {
   return randomIndex;
 }
 
-// Create function called getPlayerChoice that will ask the user to choose and then validate the input. Convert Input to lower.
-
-// function getPlayerChoice() {
-//   let playerChoice = false;
-//   while (playerChoice === false) {
-//     const playerInput = prompt("Please choose rock, paper, or scissors");
-//     if (playerInput === null) {
-//       continue;
-//     }
-//     const playerInputInLower = playerInput.toLowerCase();
-//     if (choices.includes(playerInputInLower)) {
-//       return playerInputInLower;
-//     }
-//   }
-// }
-
 // Play a single round of the game and define the possible outcomes
 
 function playRound(playerSelection, computerSelection) {
   if (playerSelection === computerSelection) {
-    outcomeHeading.textContent = `Both players chose ${playerSelection}, it's a tie!`;
+    outcomeText.textContent = `Both players chose ${playerSelection}, it's a tie!`;
   } else if (playerSelection === "rock" && computerSelection === "scissors") {
-    outcomeHeading.textContent = "Rock obliterates scissors, Player wins!";
+    outcomeText.textContent = `Computer chose ${computerSelection}! Player wins!`;
+    playerScore++;
+    playerScoreDisplay.innerText = `Player Score = ${playerScore}`;
   } else if (playerSelection === "scissors" && computerSelection === "rock") {
-    outcomeHeading.textContent = "Rock obliterates scissors, Computer wins!";
+    outcomeText.textContent = `Computer chose ${computerSelection}! Computer wins!`;
+    computerScore++;
+    computerScoreDisplay.innerText = `Computer Score = ${computerScore}`;
   } else if (playerSelection === "scissors" && computerSelection === "paper") {
-    outcomeHeading.textContent = "Scissors shreds paper, Player wins!";
+    outcomeText.textContent = `Computer chose ${computerSelection}! Player wins!`;
+    playerScore++;
+    playerScoreDisplay.innerText = `Player Score = ${playerScore}`;
   } else if (playerSelection === "paper" && computerSelection === "scissors") {
-    outcomeHeading.textContent = "Scissors shreds paper, Computer wins!";
+    outcomeText.textContent = `Computer chose ${computerSelection}! Computer wins!`;
+    computerScore++;
+    computerScoreDisplay.innerText = `Computer Score = ${computerScore}`;
   } else if (playerSelection === "paper" && computerSelection === "rock") {
-    outcomeHeading.textContent = "Paper smothers rock, Player wins!";
+    outcomeText.textContent = `Computer chose ${computerSelection}! Player wins!`;
+    playerScore++;
+    playerScoreDisplay.innerText = `Player Score = ${playerScore}`;
   } else if (playerSelection === "rock" && computerSelection === "paper") {
-    outcomeHeading.textContent = "Paper smothers rock, Computer wins!";
+    outcomeText.textContent = `Computer chose ${computerSelection}! Computer wins!`;
+    computerScore++;
+    computerScoreDisplay.innerText = `Computer Score = ${computerScore}`;
   }
 }
 
-//  Add event listeners for individual RPS buttons.
-rockButton.addEventListener("click", () => {
-  computerSelection = getComputerChoice();
-  const playerSelection = "rock";
-  playRound(playerSelection, computerSelection);
-});
+function checkForWinner() {
+  if (playerScore === 5) {
+    buttons.classList.add("game-over");
+    // buttons.setAttribute("style", "font-size: 4rem;");
+    buttons.textContent = "Game Over! Player Wins!";
+    endGame();
+  } else if (computerScore === 5) {
+    buttons.classList.add("game-over");
+    // buttons.setAttribute("style", "font-size: 4rem;");
+    buttons.textContent = "Game Over, Computer Wins!";
+    endGame();
+  }
+}
 
-scissorsButton.addEventListener("click", () => {
-  computerSelection = getComputerChoice();
-  const playerSelection = "scissors";
-  playRound(playerSelection, computerSelection);
-});
+function endGame() {
+  outcomeText.textContent = "Thanks for playing! Press start to play again.";
+  const startButton = document.createElement("button");
+  startButton.classList.add("button", "reset"); // Adding classes
+  startButton.textContent = "START";
+  buttons.appendChild(startButton);
+  startButton.addEventListener("click", resetGame);
+}
 
-paperButton.addEventListener("click", () => {
-  computerSelection = getComputerChoice();
-  const playerSelection = "paper";
-  playRound(playerSelection, computerSelection);
-});
+function resetGame() {
+  playerScore = 0;
+  computerScore = 0;
+  playerScoreDisplay.innerText = "Player Score = 0";
+  computerScoreDisplay.innerText = "Computer Score = 0";
+  outcomeText.textContent = "";
 
-// Create a function called game, the previous function (playRound()) inside of this one to play a 5 round game that keeps score and reports a winner or loser at the end.
+  // Remove the "START" button
+  const startButton = document.querySelector(".reset");
+  if (startButton) {
+    startButton.removeEventListener("click", resetGame);
+    startButton.remove();
+  }
 
-// function game() {
-//   // Play the game 5 times per round, increment the winner score by one, log the choices and total score for player and computer on each round.
+  // Clear the "game-over" class
+  buttons.classList.remove("game-over");
 
-//   for (let round = 1; round <= 5; round++) {
-//     const playerSelection = getPlayerChoice();
-//     const computerSelection = getComputerChoice();
-//     const result = playRound(playerSelection, computerSelection);
+  // Clear the contents of the buttons container
+  buttons.innerHTML = "";
 
-//     if (result.includes("Player")) {
-//       playerScore++;
-//     } else if (result.includes("Computer")) {
-//       computerScore++;
-//     }
+  // Re-add the RPS buttons
+  buttons.appendChild(rockButton);
+  buttons.appendChild(paperButton);
+  buttons.appendChild(scissorsButton);
 
-//     console.log("-----------------------------------");
-//     console.log(`Round ${round}`);
-//     console.log("Computer chose:" + " " + `${computerSelection}`);
-//     console.log("Player chose:" + " " + `${playerSelection}`);
-//     console.log(`${result}`);
-//     console.log(`Player Score: ${playerScore}`);
-//     console.log(`Computer Score: ${computerScore}`);
-//   }
+  // Reattach event listeners to RPS buttons
+  rockButton.addEventListener("click", handleRPSButtonClick);
+  scissorsButton.addEventListener("click", handleRPSButtonClick);
+  paperButton.addEventListener("click", handleRPSButtonClick);
+}
 
-//   if (playerScore > computerScore) {
-//     console.log("-----------------------------------");
-//     console.log("Game Over! Player Wins!");
-//   } else if (playerScore < computerScore) {
-//     console.log("-----------------------------------");
-//     console.log("Game Over, Computer Wins!");
-//   } else {
-//     console.log("-----------------------------------");
-//     console.log("Game Over, it's a tie! Please try again.");
-//   }
-// }
-
-// // Invoke game function
-
-// game();
+// Define a function to handle RPS button clicks
+function handleRPSButtonClick() {
+  if (!buttons.classList.contains("game-over")) {
+    computerSelection = getComputerChoice();
+    const playerSelection = this.dataset.choice; // Use data attribute
+    playRound(playerSelection, computerSelection);
+    checkForWinner();
+  }
+}
