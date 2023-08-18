@@ -52,3 +52,16 @@ lines 67-75, if it's not needed and you decided to go with other solution then d
 Beside those small things (and they're indeed small things) the code looks good, well organized, the variables have good and clear names and the logic is very straight forward and easy to follow well done @Christopher Werkmeister ++ 🙂
 
 There's dedicated channels for feedback ⁠creations-showcase ⁠feedback-trading so consider those for next projects 🙂
+
+## Revision 2:
+
+Technologies Used: Javascript, HTML5, CSS3
+
+Introduction: Revisiting this project to add a UI and make the game interactive.
+
+## Lessons Learned
+
+1. I am starting to get comfortable with Javascript. Taking some time to think about the problem, finding solutions via google & chat GPT, and implementing them on my own. I am feeling a lot more comfortable with using other solutions and modifying them to work for my projects, accepting this is a normal part of programming and that everyone does it.
+2. I learned more about media queries and how/when to use them.
+3. Taking what I learned in the DOM Manipulation module of TOP and putting it into practice.
+4. My code is far from efficient, chat GPT is gold when it comes to optimizing snippets.
