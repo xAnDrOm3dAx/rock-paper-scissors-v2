@@ -83,12 +83,12 @@ function checkForWinner() {
   if (playerScore === 5) {
     buttons.classList.add("game-over");
     // buttons.setAttribute("style", "font-size: 4rem;");
-    buttons.textContent = "Game Over! Player Wins!";
+    buttons.textContent = "Game Over... Player Wins!";
     endGame();
   } else if (computerScore === 5) {
     buttons.classList.add("game-over");
     // buttons.setAttribute("style", "font-size: 4rem;");
-    buttons.textContent = "Game Over, Computer Wins!";
+    buttons.textContent = "Game Over... Computer Wins!";
     endGame();
   }
 }
