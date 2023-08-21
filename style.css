@@ -45,14 +45,15 @@ button {
   font-size: 1.3rem;
   width: 100px;
   height: 50px;
-  background-color: #355573;
+  background: #355573;
   transition: 0.5s;
   text-align: center;
 }
 
-button:hover {
+button:active {
   background-color: #be7100;
-  transition: 0.5s;
+  background-size: 100%;
+  transition: background 0s;
 }
 
 .copyright {
@@ -94,6 +95,7 @@ button:hover {
   }
 }
 
+/* 
 @media (hover: none) {
   button {
     background-color: #355573;
@@ -104,4 +106,4 @@ button:hover {
     background-color: #be7100;
     transition: 0.1s;
   }
-}
+} */
