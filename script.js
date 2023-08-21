@@ -7,7 +7,7 @@ const buttons = document.querySelector(".buttons");
 const outcomeText = document.querySelector(".win-or-lose");
 const playerScoreDisplay = document.querySelector(".player-score");
 const computerScoreDisplay = document.querySelector(".computer-score");
-const message = document.querySelector(".result-message");
+const gameOver = document.querySelector(".game-over");
 
 //  Add event listeners for individual RPS buttons.
 rockButton.addEventListener("click", () => {
@@ -82,23 +82,19 @@ function playRound(playerSelection, computerSelection) {
 
 function checkForWinner() {
   if (playerScore === 5) {
-    buttons.classList.add("game-over");
-    // buttons.setAttribute("style", "font-size: 4rem;");
     buttons.textContent = "";
-    message.textContent = "Game Over! Player has 5 points.";
+    gameOver.textContent = "Game Over... Player has 5 points.";
     endGame();
   } else if (computerScore === 5) {
-    buttons.classList.add("game-over");
-    // buttons.setAttribute("style", "font-size: 4rem;");
     buttons.textContent = "";
-    message.textContent = "Game Over! Computer has 5 points.";
+    gameOver.textContent = "Game Over... Computer has 5 points.";
     endGame();
   }
 }
 
 function endGame() {
   const startButton = document.createElement("button");
-  startButton.classList.add("button", "reset"); // Adding classes
+  startButton.classList.add("button"); // Adding classes
   startButton.textContent = "START";
   buttons.appendChild(startButton);
   startButton.addEventListener("click", resetGame);
@@ -107,10 +103,10 @@ function endGame() {
 function resetGame() {
   playerScore = 0;
   computerScore = 0;
-  playerScoreDisplay.innerText = "Player Score = 0";
-  computerScoreDisplay.innerText = "Computer Score = 0";
-  message.textContent = "";
+  playerScoreDisplay.textContent = "Player Score = 0";
+  computerScoreDisplay.textContent = "Computer Score = 0";
   outcomeText.textContent = "CHOOSE YOUR WEAPON";
+  gameOver.textContent = "";
 
   // Remove the "START" button
   const startButton = document.querySelector(".reset");
