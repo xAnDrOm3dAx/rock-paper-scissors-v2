@@ -114,6 +114,9 @@ function resetGame() {
     startButton.remove();
   }
 
+  // Remove event listener from the buttons container
+  buttons.removeEventListener("click", handleRPSButtonClick);
+
   // Clear the contents of the buttons container
   buttons.innerHTML = "";
 
@@ -122,12 +125,9 @@ function resetGame() {
   buttons.appendChild(paperButton);
   buttons.appendChild(scissorsButton);
 
-  // Reattach event listeners to RPS buttons
-  rockButton.addEventListener("click", handleRPSButtonClick);
-  scissorsButton.addEventListener("click", handleRPSButtonClick);
-  paperButton.addEventListener("click", handleRPSButtonClick);
+  // Reattach event listener to the buttons container
+  buttons.addEventListener("click", handleRPSButtonClick);
 }
-
 // Define a function to handle RPS button clicks
 function handleRPSButtonClick() {
   computerSelection = getComputerChoice();
