@@ -47,7 +47,6 @@ button {
   height: 50px;
   background: #355573;
   transition: 0.3s;
-  text-align: center;
 }
 
 button:active {
