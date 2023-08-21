@@ -1,3 +1,9 @@
+/* Add a class to disable hover effect */
+.buttons.disabled-hover button:hover {
+  background-color: #355573;
+  transition: none; /* Remove transition to instantly change background color */
+}
+
 * {
   margin: 0;
   box-sizing: border-box;
@@ -56,6 +62,12 @@ button {
 .rock:hover,
 .paper:hover,
 .scissors:hover {
+  background-color: #be7100;
+  transition: 0.3s;
+}
+
+/* Apply the hover effect only when the button is not in the active (pressed) state */
+button:not(:active):hover {
   background-color: #be7100;
   transition: 0.3s;
 }
