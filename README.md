@@ -4,6 +4,10 @@ The Odin Project - Foundations Course
 
 Project: Rock Paper Scissors solo project revision 1
 
+## Live Site:
+
+https://xandrom3dax.github.io/rock-paper-scissors-v2/
+
 ## Revision 1:
 
 Technologies Used: Javascript
