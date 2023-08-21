@@ -44,7 +44,6 @@ let computerScore = 0;
 
 function getComputerChoice() {
   const randomIndex = choices[Math.floor(Math.random() * choices.length)];
-  console.log(randomIndex);
   return randomIndex;
 }
 
@@ -94,7 +93,7 @@ function checkForWinner() {
 
 function endGame() {
   const startButton = document.createElement("button");
-  startButton.classList.add("button"); // Adding classes
+  startButton.classList.add("button", "reset"); // Adding classes
   startButton.textContent = "START";
   buttons.appendChild(startButton);
   startButton.addEventListener("click", resetGame);
@@ -106,7 +105,7 @@ function resetGame() {
   playerScoreDisplay.textContent = "Player Score = 0";
   computerScoreDisplay.textContent = "Computer Score = 0";
   outcomeText.textContent = "CHOOSE YOUR WEAPON";
-  gameOver.textContent = "";
+  gameOver.textContent = "First to 5 points wins the game";
 
   // Remove the "START" button
   const startButton = document.querySelector(".reset");
@@ -114,9 +113,6 @@ function resetGame() {
     startButton.removeEventListener("click", resetGame);
     startButton.remove();
   }
-
-  // Clear the "game-over" class
-  buttons.classList.remove("game-over");
 
   // Clear the contents of the buttons container
   buttons.innerHTML = "";
@@ -134,10 +130,8 @@ function resetGame() {
 
 // Define a function to handle RPS button clicks
 function handleRPSButtonClick() {
-  if (!buttons.classList.contains("game-over")) {
-    computerSelection = getComputerChoice();
-    const playerSelection = this.dataset.choice; // Use data attribute
-    playRound(playerSelection, computerSelection);
-    checkForWinner();
-  }
+  computerSelection = getComputerChoice();
+  const playerSelection = this.dataset.choice; // Use data attribute
+  playRound(playerSelection, computerSelection);
+  checkForWinner();
 }
