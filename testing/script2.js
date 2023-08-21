@@ -134,3 +134,5 @@ function handleRPSButtonClick() {
     checkForWinner();
   }
 }
+
+// test
