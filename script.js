@@ -7,6 +7,7 @@ const buttons = document.querySelector(".buttons");
 const outcomeText = document.querySelector(".win-or-lose");
 const playerScoreDisplay = document.querySelector(".player-score");
 const computerScoreDisplay = document.querySelector(".computer-score");
+const message = document.querySelector(".welcome-message");
 
 //  Add event listeners for individual RPS buttons.
 rockButton.addEventListener("click", () => {
@@ -83,18 +84,20 @@ function checkForWinner() {
   if (playerScore === 5) {
     buttons.classList.add("game-over");
     // buttons.setAttribute("style", "font-size: 4rem;");
-    buttons.textContent = "Game Over... Player Wins!";
+    buttons.textContent = "";
+    message.textContent = "Game Over... Player Wins!";
     endGame();
   } else if (computerScore === 5) {
     buttons.classList.add("game-over");
     // buttons.setAttribute("style", "font-size: 4rem;");
-    buttons.textContent = "Game Over... Computer Wins!";
+    buttons.textContent = "";
+    message.textContent = "Game Over... Computer Wins!";
     endGame();
   }
 }
 
 function endGame() {
-  outcomeText.textContent = "Thanks for playing! Press start to play again.";
+  outcomeText.textContent = "Press START to play again.";
   const startButton = document.createElement("button");
   startButton.classList.add("button", "reset"); // Adding classes
   startButton.textContent = "START";
@@ -107,7 +110,8 @@ function resetGame() {
   computerScore = 0;
   playerScoreDisplay.innerText = "Player Score = 0";
   computerScoreDisplay.innerText = "Computer Score = 0";
-  outcomeText.textContent = "";
+  message.textContent = "CHOOSE YOUR WEAPON!";
+  outcomeText.textContent = "3... 2... 1... Battle!";
 
   // Remove the "START" button
   const startButton = document.querySelector(".reset");

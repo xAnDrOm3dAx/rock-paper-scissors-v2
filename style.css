@@ -25,15 +25,11 @@ h1 {
   text-align: center;
 }
 
-h2,
 h3 {
   font-size: 2rem;
   text-align: center;
-  margin: 0px 30px 30px;
-}
-
-h3 {
-  margin: 30px;
+  margin-bottom: 30px;
+  font-weight: 600;
 }
 
 .buttons {
@@ -41,6 +37,7 @@ h3 {
   flex-direction: row;
   gap: 15px;
   text-align: center;
+  margin-bottom: 30px;
 }
 
 button {
@@ -49,17 +46,32 @@ button {
   font-size: 1.3rem;
   width: 100px;
   height: 50px;
+  background-color: #355573;
+}
+
+.copyright {
+  margin: 30px;
+}
+
+.rock:hover,
+.paper:hover,
+.scissors:hover {
+  background-color: #be7100;
+  transition: 0.3s;
 }
 
 .rules {
-  margin-bottom: 30px;
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   text-align: center;
+  border: 3px solid #fff;
+  border-radius: 15px;
+  padding: 15px;
+  margin-bottom: 30px;
 }
 
 .results {
   text-align: center;
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   margin-bottom: 30px;
 }
 
@@ -69,10 +81,7 @@ button {
   justify-content: center;
   align-items: center;
   font-size: 2.5rem;
-  border: 3px solid #fff;
-  border-radius: 15px;
-  padding: 15px;
-  margin: 15px;
+  font-weight: 700;
   gap: 30px;
 }
 
@@ -81,19 +90,13 @@ button {
 @media (max-width: 768px) {
   h1 {
     font-size: 3rem;
-    margin-top: 20px;
-    margin-bottom: 10px;
+    margin-bottom: 30px;
   }
 
-  h2,
   h3 {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     text-align: center;
-    margin: 0px 30px 30px;
-  }
-
-  h3 {
-    margin: 30px;
+    margin: 0px 10px 30px;
   }
 
   .game-over {
