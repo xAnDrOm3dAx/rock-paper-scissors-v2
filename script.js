@@ -54,27 +54,27 @@ function playRound(playerSelection, computerSelection) {
   if (playerSelection === computerSelection) {
     outcomeText.textContent = `Both players chose ${playerSelection}, it's a tie!`;
   } else if (playerSelection === "rock" && computerSelection === "scissors") {
-    outcomeText.textContent = `Computer chose ${computerSelection}! Player wins!`;
+    outcomeText.textContent = `Computer chose ${computerSelection}, Player wins!`;
     playerScore++;
     playerScoreDisplay.innerText = `Player Score = ${playerScore}`;
   } else if (playerSelection === "scissors" && computerSelection === "rock") {
-    outcomeText.textContent = `Computer chose ${computerSelection}! Computer wins!`;
+    outcomeText.textContent = `Computer chose ${computerSelection}, Computer wins!`;
     computerScore++;
     computerScoreDisplay.innerText = `Computer Score = ${computerScore}`;
   } else if (playerSelection === "scissors" && computerSelection === "paper") {
-    outcomeText.textContent = `Computer chose ${computerSelection}! Player wins!`;
+    outcomeText.textContent = `Computer chose ${computerSelection}, Player wins!`;
     playerScore++;
     playerScoreDisplay.innerText = `Player Score = ${playerScore}`;
   } else if (playerSelection === "paper" && computerSelection === "scissors") {
-    outcomeText.textContent = `Computer chose ${computerSelection}! Computer wins!`;
+    outcomeText.textContent = `Computer chose ${computerSelection}, Computer wins!`;
     computerScore++;
     computerScoreDisplay.innerText = `Computer Score = ${computerScore}`;
   } else if (playerSelection === "paper" && computerSelection === "rock") {
-    outcomeText.textContent = `Computer chose ${computerSelection}! Player wins!`;
+    outcomeText.textContent = `Computer chose ${computerSelection}, Player wins!`;
     playerScore++;
     playerScoreDisplay.innerText = `Player Score = ${playerScore}`;
   } else if (playerSelection === "rock" && computerSelection === "paper") {
-    outcomeText.textContent = `Computer chose ${computerSelection}! Computer wins!`;
+    outcomeText.textContent = `Computer chose ${computerSelection}, Computer wins!`;
     computerScore++;
     computerScoreDisplay.innerText = `Computer Score = ${computerScore}`;
   }
@@ -85,19 +85,18 @@ function checkForWinner() {
     buttons.classList.add("game-over");
     // buttons.setAttribute("style", "font-size: 4rem;");
     buttons.textContent = "";
-    message.textContent = "Game Over... Player Wins!";
+    message.textContent = "Game Over... Player has 5 points. Press START to play again.";
     endGame();
   } else if (computerScore === 5) {
     buttons.classList.add("game-over");
     // buttons.setAttribute("style", "font-size: 4rem;");
     buttons.textContent = "";
-    message.textContent = "Game Over... Computer Wins!";
+    message.textContent = "Game Over... Computer has 5 points. Press START to play again.";
     endGame();
   }
 }
 
 function endGame() {
-  outcomeText.textContent = "Press START to play again.";
   const startButton = document.createElement("button");
   startButton.classList.add("button", "reset"); // Adding classes
   startButton.textContent = "START";
@@ -110,8 +109,8 @@ function resetGame() {
   computerScore = 0;
   playerScoreDisplay.innerText = "Player Score = 0";
   computerScoreDisplay.innerText = "Computer Score = 0";
-  message.textContent = "CHOOSE YOUR WEAPON!";
-  outcomeText.textContent = "3... 2... 1... Battle!";
+  message.textContent = "3.. 2.. 1.. Battle!";
+  outcomeText.textContent = "CHOOSE YOUR WEAPON";
 
   // Remove the "START" button
   const startButton = document.querySelector(".reset");
