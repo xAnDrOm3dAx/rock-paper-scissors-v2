@@ -83,20 +83,55 @@ function checkForWinner() {
   if (playerScore === 5) {
     buttons.textContent = "";
     gameOver.textContent = "Game Over... Player has 5 points.";
-    resetGame();
+    endGame();
   } else if (computerScore === 5) {
     buttons.textContent = "";
     gameOver.textContent = "Game Over... Computer has 5 points.";
-    resetGame();
+    endGame();
   }
 }
 
-function resetGame() {
+function endGame() {
   const startButton = document.createElement("button");
   startButton.classList.add("button", "reset"); // Adding classes
   startButton.textContent = "START";
   buttons.appendChild(startButton);
-  startButton.addEventListener("click", () => {
-    window.location.reload(); // Reload the page when start button is clicked
-  });
+  startButton.addEventListener("click", resetGame);
+}
+
+function resetGame() {
+  playerScore = 0;
+  computerScore = 0;
+  playerScoreDisplay.textContent = "Player Score = 0";
+  computerScoreDisplay.textContent = "Computer Score = 0";
+  outcomeText.textContent = "CHOOSE YOUR WEAPON";
+  gameOver.textContent = "First to 5 points wins the game";
+
+  // Remove the "START" button
+  const startButton = document.querySelector(".reset");
+  if (startButton) {
+    startButton.removeEventListener("click", resetGame);
+    startButton.remove();
+  }
+
+  // Remove event listener from the buttons container
+  buttons.removeEventListener("click", handleRPSButtonClick);
+
+  // Clear the contents of the buttons container
+  buttons.innerHTML = "";
+
+  // Re-add the RPS buttons
+  buttons.appendChild(rockButton);
+  buttons.appendChild(paperButton);
+  buttons.appendChild(scissorsButton);
+
+  // Reattach event listener to the buttons container
+  buttons.addEventListener("click", handleRPSButtonClick);
+}
+// Define a function to handle RPS button clicks
+function handleRPSButtonClick() {
+  computerSelection = getComputerChoice();
+  const playerSelection = this.dataset.choice; // Use data attribute
+  playRound(playerSelection, computerSelection);
+  checkForWinner();
 }
