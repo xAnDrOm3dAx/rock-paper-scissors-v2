@@ -46,14 +46,13 @@ button {
   width: 100px;
   height: 50px;
   background: #355573;
-  transition: 0.5s;
+  transition: 0.3s;
   text-align: center;
 }
 
 button:active {
   background-color: #be7100;
-  background-size: 100%;
-  transition: background 0s;
+  transition: 0s;
 }
 
 .copyright {
@@ -94,16 +93,3 @@ button:active {
     font-size: 1.3rem;
   }
 }
-
-/* 
-@media (hover: none) {
-  button {
-    background-color: #355573;
-    transition: 0.1s;
-  }
-
-  button:hover {
-    background-color: #be7100;
-    transition: 0.1s;
-  }
-} */
