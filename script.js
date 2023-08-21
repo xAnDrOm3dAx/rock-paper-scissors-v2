@@ -7,7 +7,7 @@ const buttons = document.querySelector(".buttons");
 const outcomeText = document.querySelector(".win-or-lose");
 const playerScoreDisplay = document.querySelector(".player-score");
 const computerScoreDisplay = document.querySelector(".computer-score");
-const message = document.querySelector(".welcome-message");
+const message = document.querySelector(".result-message");
 
 //  Add event listeners for individual RPS buttons.
 rockButton.addEventListener("click", () => {
@@ -85,13 +85,13 @@ function checkForWinner() {
     buttons.classList.add("game-over");
     // buttons.setAttribute("style", "font-size: 4rem;");
     buttons.textContent = "";
-    message.textContent = "Game Over... Player has 5 points. Press START to play again.";
+    message.textContent = "Game Over! Player has 5 points.";
     endGame();
   } else if (computerScore === 5) {
     buttons.classList.add("game-over");
     // buttons.setAttribute("style", "font-size: 4rem;");
     buttons.textContent = "";
-    message.textContent = "Game Over... Computer has 5 points. Press START to play again.";
+    message.textContent = "Game Over! Computer has 5 points.";
     endGame();
   }
 }
@@ -109,7 +109,7 @@ function resetGame() {
   computerScore = 0;
   playerScoreDisplay.innerText = "Player Score = 0";
   computerScoreDisplay.innerText = "Computer Score = 0";
-  message.textContent = "3.. 2.. 1.. Battle!";
+  message.textContent = "";
   outcomeText.textContent = "CHOOSE YOUR WEAPON";
 
   // Remove the "START" button
