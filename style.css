@@ -46,13 +46,11 @@ button {
   width: 100px;
   height: 50px;
   background-color: #355573;
-  transition: background-color 0.1s; /* Default transition for background-color */
   text-align: center;
 }
 
-button:hover {
+button:active {
   background-color: #be7100;
-  transition: 0.1s;
 }
 
 .copyright {
