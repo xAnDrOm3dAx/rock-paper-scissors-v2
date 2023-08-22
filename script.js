@@ -12,28 +12,28 @@ const gameOver = document.querySelector(".game-over");
 //  Add event listeners for individual RPS buttons.
 rockButton.addEventListener("click", () => {
   computerSelection = getComputerChoice();
-  const playerSelection = "rock";
+  const playerSelection = "ROCK";
   playRound(playerSelection, computerSelection);
   checkForWinner();
 });
 
 scissorsButton.addEventListener("click", () => {
   computerSelection = getComputerChoice();
-  const playerSelection = "scissors";
+  const playerSelection = "SCISSORS";
   playRound(playerSelection, computerSelection);
   checkForWinner();
 });
 
 paperButton.addEventListener("click", () => {
   computerSelection = getComputerChoice();
-  const playerSelection = "paper";
+  const playerSelection = "PAPER";
   playRound(playerSelection, computerSelection);
   checkForWinner();
 });
 
 // Create a variable that holds the values of ‘Rock’, ‘Paper’ or ‘Scissors’ within an array.
 
-const choices = ["rock", "paper", "scissors"];
+const choices = ["ROCK", "PAPER", "SCISSORS"];
 
 // Initialize scores at 0 and increment when playing
 
@@ -52,27 +52,27 @@ function getComputerChoice() {
 function playRound(playerSelection, computerSelection) {
   if (playerSelection === computerSelection) {
     outcomeText.textContent = `Both players chose ${playerSelection}, it's a tie!`;
-  } else if (playerSelection === "rock" && computerSelection === "scissors") {
+  } else if (playerSelection === "ROCK" && computerSelection === "SCISSORS") {
     outcomeText.textContent = `Computer chose ${computerSelection}, Player wins!`;
     playerScore++;
     playerScoreDisplay.innerText = `Player Score = ${playerScore}`;
-  } else if (playerSelection === "scissors" && computerSelection === "rock") {
+  } else if (playerSelection === "SCISSORS" && computerSelection === "ROCK") {
     outcomeText.textContent = `Computer chose ${computerSelection}, Computer wins!`;
     computerScore++;
     computerScoreDisplay.innerText = `Computer Score = ${computerScore}`;
-  } else if (playerSelection === "scissors" && computerSelection === "paper") {
+  } else if (playerSelection === "SCISSORS" && computerSelection === "PAPER") {
     outcomeText.textContent = `Computer chose ${computerSelection}, Player wins!`;
     playerScore++;
     playerScoreDisplay.innerText = `Player Score = ${playerScore}`;
-  } else if (playerSelection === "paper" && computerSelection === "scissors") {
+  } else if (playerSelection === "PAPER" && computerSelection === "SCISSORS") {
     outcomeText.textContent = `Computer chose ${computerSelection}, Computer wins!`;
     computerScore++;
     computerScoreDisplay.innerText = `Computer Score = ${computerScore}`;
-  } else if (playerSelection === "paper" && computerSelection === "rock") {
+  } else if (playerSelection === "PAPER" && computerSelection === "ROCK") {
     outcomeText.textContent = `Computer chose ${computerSelection}, Player wins!`;
     playerScore++;
     playerScoreDisplay.innerText = `Player Score = ${playerScore}`;
-  } else if (playerSelection === "rock" && computerSelection === "paper") {
+  } else if (playerSelection === "ROCK" && computerSelection === "PAPER") {
     outcomeText.textContent = `Computer chose ${computerSelection}, Computer wins!`;
     computerScore++;
     computerScoreDisplay.innerText = `Computer Score = ${computerScore}`;
