@@ -53,27 +53,27 @@ function playRound(playerSelection, computerSelection) {
   if (playerSelection === computerSelection) {
     outcomeText.textContent = `Both players chose ${playerSelection}, it's a tie!`;
   } else if (playerSelection === "ROCK" && computerSelection === "SCISSORS") {
-    outcomeText.textContent = `Computer chose ${computerSelection}, Player wins!`;
+    outcomeText.textContent = `Computer chose ${computerSelection} - Player wins!`;
     playerScore++;
     playerScoreDisplay.innerText = `Player Score = ${playerScore}`;
   } else if (playerSelection === "SCISSORS" && computerSelection === "ROCK") {
-    outcomeText.textContent = `Computer chose ${computerSelection}, Computer wins!`;
+    outcomeText.textContent = `Computer chose ${computerSelection} - Computer wins!`;
     computerScore++;
     computerScoreDisplay.innerText = `Computer Score = ${computerScore}`;
   } else if (playerSelection === "SCISSORS" && computerSelection === "PAPER") {
-    outcomeText.textContent = `Computer chose ${computerSelection}, Player wins!`;
+    outcomeText.textContent = `Computer chose ${computerSelection} - Player wins!`;
     playerScore++;
     playerScoreDisplay.innerText = `Player Score = ${playerScore}`;
   } else if (playerSelection === "PAPER" && computerSelection === "SCISSORS") {
-    outcomeText.textContent = `Computer chose ${computerSelection}, Computer wins!`;
+    outcomeText.textContent = `Computer chose ${computerSelection} - Computer wins!`;
     computerScore++;
     computerScoreDisplay.innerText = `Computer Score = ${computerScore}`;
   } else if (playerSelection === "PAPER" && computerSelection === "ROCK") {
-    outcomeText.textContent = `Computer chose ${computerSelection}, Player wins!`;
+    outcomeText.textContent = `Computer chose ${computerSelection} - Player wins!`;
     playerScore++;
     playerScoreDisplay.innerText = `Player Score = ${playerScore}`;
   } else if (playerSelection === "ROCK" && computerSelection === "PAPER") {
-    outcomeText.textContent = `Computer chose ${computerSelection}, Computer wins!`;
+    outcomeText.textContent = `Computer chose ${computerSelection} - Computer wins!`;
     computerScore++;
     computerScoreDisplay.innerText = `Computer Score = ${computerScore}`;
   }
