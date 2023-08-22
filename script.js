@@ -93,7 +93,6 @@ function checkForWinner() {
 
 function resetGame() {
   const startButton = document.createElement("button");
-  startButton.classList.add("button", "reset"); // Adding classes
   startButton.textContent = "START";
   buttons.appendChild(startButton);
   startButton.addEventListener("click", () => {
