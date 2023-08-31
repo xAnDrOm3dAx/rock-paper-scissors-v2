@@ -53,7 +53,7 @@ button {
   align-items: center;
 }
 
-button:active {
+button:hover {
   background-color: #be7100;
   transition: 0s;
 }
@@ -99,5 +99,10 @@ button:active {
   .rules,
   .results {
     font-size: 1.2rem;
+  }
+
+  button:active {
+    background-color: #be7100;
+    transition: 0s;
   }
 }
