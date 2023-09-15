@@ -6,7 +6,7 @@ Project: Rock Paper Scissors solo project revision 1
 
 ## Live Site:
 
-https://xandrom3dax.github.io/rock-paper-scissors-v2/
+https://xandrom3dax.github.io/rock-paper-scissors/
 
 ## Revision 1:
 
