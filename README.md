@@ -69,3 +69,5 @@ Introduction: Revisiting this project to add a UI and make the game interactive.
 2. I learned more about media queries and how/when to use them.
 3. Taking what I learned in the DOM Manipulation module of TOP and putting it into practice.
 4. My code is far from efficient, chat GPT is gold when it comes to optimizing snippets.
+
+<!-- test -->
