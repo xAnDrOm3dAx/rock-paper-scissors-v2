@@ -53,6 +53,10 @@ button {
   align-items: center;
 }
 
+.start-button {
+  width: fit-content;
+}
+
 button:hover {
   background-color: #be7100;
   transition: 0s;

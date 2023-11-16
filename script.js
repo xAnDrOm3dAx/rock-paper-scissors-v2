@@ -93,7 +93,8 @@ function checkForWinner() {
 
 function resetGame() {
   const startButton = document.createElement("button");
-  startButton.textContent = "START";
+  startButton.classList.add("start-button");
+  startButton.textContent = "START GAME";
   buttons.appendChild(startButton);
   startButton.addEventListener("click", () => {
     window.location.reload(); // Reload the page when start button is clicked
