@@ -61,7 +61,7 @@ There's dedicated channels for feedback ⁠creations-showcase ⁠feedback-tradin
 
 Technologies Used: Javascript, HTML5, CSS3
 
-Introduction: Revisiting project to add a UI and make the game interactive.
+Introduction: Revisiting this project to add a UI and make the game interactive.
 
 ## Lessons Learned
 
