@@ -82,10 +82,12 @@ function playRound(playerSelection, computerSelection) {
 function checkForWinner() {
   if (playerScore === 5) {
     buttons.textContent = "";
+    outcomeText.textContent = "Player Wins!";
     gameOver.textContent = "Game Over... Player has 5 points.";
     resetGame();
   } else if (computerScore === 5) {
     buttons.textContent = "";
+    outcomeText.textContent = "Computer Wins!";
     gameOver.textContent = "Game Over... Computer has 5 points.";
     resetGame();
   }
