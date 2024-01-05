@@ -12,28 +12,28 @@ const gameOver = document.querySelector(".game-over");
 //  Add event listeners for individual RPS buttons.
 rockButton.addEventListener("click", () => {
   computerSelection = getComputerChoice();
-  const playerSelection = "ROCK";
+  const playerSelection = "✊";
   playRound(playerSelection, computerSelection);
   checkForWinner();
 });
 
 scissorsButton.addEventListener("click", () => {
   computerSelection = getComputerChoice();
-  const playerSelection = "SCISSORS";
+  const playerSelection = "✌";
   playRound(playerSelection, computerSelection);
   checkForWinner();
 });
 
 paperButton.addEventListener("click", () => {
   computerSelection = getComputerChoice();
-  const playerSelection = "PAPER";
+  const playerSelection = "✋";
   playRound(playerSelection, computerSelection);
   checkForWinner();
 });
 
 // Create a variable that holds the values of ‘Rock’, ‘Paper’ or ‘Scissors’ within an array.
 
-const choices = ["ROCK", "PAPER", "SCISSORS"];
+const choices = ["✊", "✋", "✌"];
 
 // Initialize scores at 0 and increment when playing
 
@@ -48,32 +48,45 @@ function getComputerChoice() {
 }
 
 // Play a single round of the game and define the possible outcomes
+const resultsWindow = document.querySelector("#round-results");
+const playerResult = document.querySelector("#player-result");
+const computerResult = document.querySelector("#computer-result");
 
+// START HERE
 function playRound(playerSelection, computerSelection) {
   if (playerSelection === computerSelection) {
-    outcomeText.textContent = `Both players chose ${playerSelection}, it's a tie!`;
-  } else if (playerSelection === "ROCK" && computerSelection === "SCISSORS") {
-    outcomeText.textContent = `Computer chose ${computerSelection} - Player wins!`;
+    outcomeText.textContent = `Both players chose ${playerSelection} it's a tie!`;
+    resultsWindow.style.display = "flex";
+    const showPlayerSelection = document.createElement("div");
+    showPlayerSelection.classList.add("player-selection");
+    showPlayerSelection.innerHTML = playerSelection;
+    playerResult.appendChild(showPlayerSelection);
+    // const showPlayerSelection = document.createElement("div");
+    // showPlayerSelection.classList.add(".player-result");
+    // showPlayerSelection.innerHTML = "<h2>Let's Get In Touch</h2>";
+    // createHeaderWrapper.appendChild(createTitle);
+  } else if (playerSelection === "✊" && computerSelection === "✌") {
+    outcomeText.textContent = `Computer chose ${computerSelection} Player wins!`;
     playerScore++;
     playerScoreDisplay.innerText = `Player Score = ${playerScore}`;
-  } else if (playerSelection === "SCISSORS" && computerSelection === "ROCK") {
-    outcomeText.textContent = `Computer chose ${computerSelection} - Computer wins!`;
+  } else if (playerSelection === "✌" && computerSelection === "✊") {
+    outcomeText.textContent = `Computer chose ${computerSelection} Computer wins!`;
     computerScore++;
     computerScoreDisplay.innerText = `Computer Score = ${computerScore}`;
-  } else if (playerSelection === "SCISSORS" && computerSelection === "PAPER") {
-    outcomeText.textContent = `Computer chose ${computerSelection} - Player wins!`;
+  } else if (playerSelection === "✌" && computerSelection === "✋") {
+    outcomeText.textContent = `Computer chose ${computerSelection} Player wins!`;
     playerScore++;
     playerScoreDisplay.innerText = `Player Score = ${playerScore}`;
-  } else if (playerSelection === "PAPER" && computerSelection === "SCISSORS") {
-    outcomeText.textContent = `Computer chose ${computerSelection} - Computer wins!`;
+  } else if (playerSelection === "✋" && computerSelection === "✌") {
+    outcomeText.textContent = `Computer chose ${computerSelection} Computer wins!`;
     computerScore++;
     computerScoreDisplay.innerText = `Computer Score = ${computerScore}`;
-  } else if (playerSelection === "PAPER" && computerSelection === "ROCK") {
-    outcomeText.textContent = `Computer chose ${computerSelection} - Player wins!`;
+  } else if (playerSelection === "✋" && computerSelection === "✊") {
+    outcomeText.textContent = `Computer chose ${computerSelection} Player wins!`;
     playerScore++;
     playerScoreDisplay.innerText = `Player Score = ${playerScore}`;
-  } else if (playerSelection === "ROCK" && computerSelection === "PAPER") {
-    outcomeText.textContent = `Computer chose ${computerSelection} - Computer wins!`;
+  } else if (playerSelection === "✊" && computerSelection === "✋") {
+    outcomeText.textContent = `Computer chose ${computerSelection} Computer wins!`;
     computerScore++;
     computerScoreDisplay.innerText = `Computer Score = ${computerScore}`;
   }
