@@ -9,21 +9,23 @@
   box-sizing: border-box;
 }
 
-body,
-button {
+body {
   color: white;
   font-family: "Dosis", sans-serif;
+  min-height: 100vh;
+  background-image: linear-gradient(to bottom, #1c0950 0%, #000000 100%);
+  margin: 0 1rem;
 }
 
-body {
+.app-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 1.6rem;
-  min-height: 100vh;
-  background-image: linear-gradient(to bottom, #1c0950 0%, #000000 100%);
-  margin: 0 1rem 0 1rem;
+  width: 320px;
+  width: 320px;
+  margin: 0 auto;
 }
 
 h1 {
@@ -37,58 +39,6 @@ h2 {
   text-align: center;
 }
 
-.buttons {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-around;
-}
-
-button {
-  border: 3px solid #b46000;
-  border-radius: 50%;
-  width: 70px;
-  font-size: 1.5rem;
-  padding: 10px;
-  background: #355573;
-  transition: 0.8s;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-span {
-  font-size: 2rem;
-}
-
-svg {
-  color: #be7100;
-  width: 40px;
-  height: 40px;
-}
-
-.start-button {
-  width: fit-content;
-  border: 3px solid #b46000;
-  border-radius: 10px;
-  font-size: 1.5rem;
-  padding: 10px;
-  background: #355573;
-  transition: 0.3s;
-  display: flex;
-  align-items: center;
-}
-
-button:hover {
-  background-color: #be7100;
-  transition: 0s;
-}
-
-.copyright {
-  margin-bottom: 30px;
-}
-
 .rules {
   display: flex;
   flex-direction: column;
@@ -98,12 +48,59 @@ button:hover {
   border: 3px solid #b46000;
   border-radius: 15px;
   padding: 0.8rem;
+  width: 100%;
 
   & p {
     display: flex;
     align-items: center;
     gap: 0.6rem;
   }
+}
+
+.buttons {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+
+  button {
+    font-family: "Dosis", sans-serif;
+    border: 3px solid #b46000;
+    border-radius: 50%;
+    width: 70px;
+    font-size: 1.5rem;
+    padding: 10px;
+    background: transparent;
+    transition: 0.8s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .start-button {
+    width: fit-content;
+    border-radius: 10px;
+    background: transparent;
+    color: white;
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+  }
+
+  button:hover {
+    background-color: #be7100;
+    transition: 0s;
+  }
+}
+
+span {
+  font-size: 2rem;
+}
+
+.copyright {
+  margin-bottom: 30px;
 }
 
 .round-results {
@@ -142,7 +139,7 @@ button:hover {
 
 /* Media query for  with max width 768px (typical breakpoint for mobile devices) */
 
-@media (min-width: 480px) {
+/* @media (min-width: 480px) {
   h1 {
     font-size: 2.7rem;
     margin-bottom: 30px;
@@ -168,4 +165,4 @@ button:hover {
     background-color: #be7100;
     transition: 0s;
   }
-}
+} */
