@@ -24,7 +24,6 @@ body {
   justify-content: center;
   gap: 1.6rem;
   width: 320px;
-  width: 320px;
   margin: 0 auto;
 }
 
@@ -57,20 +56,20 @@ h2 {
   }
 }
 
-.buttons {
+.button-wrapper {
   width: 100%;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
   width: 100%;
+  height: 70px;
 
   button {
     font-family: "Dosis", sans-serif;
     border: 3px solid #b46000;
     border-radius: 15px;
     width: 70px;
-    font-size: 2rem;
     padding: 10px;
     background: transparent;
     transition: 0.8s;
@@ -80,8 +79,9 @@ h2 {
   }
 
   .start-button {
+    font-size: 1.5rem;
     width: fit-content;
-    border-radius: 10px;
+    border-radius: 15px;
     padding: 10px;
     background: transparent;
     color: white;
@@ -137,7 +137,7 @@ span {
 .results {
   text-align: center;
   font-size: 1.5rem;
-  margin-bottom: 30px;
+  margin-bottom: 1.6rem;
 }
 
 /* Media query for  with max width 768px (typical breakpoint for mobile devices) */
