@@ -54,48 +54,31 @@ const resultsWindow = document.querySelector("#round-results");
 const playerResult = document.querySelector("#player-result");
 const computerResult = document.querySelector("#computer-result");
 
-// START HERE
 function playRound(playerSelection, computerSelection) {
   if (playerSelection === computerSelection) {
     gameOver.textContent = "It's a tie!";
     playerWeapon.textContent = playerSelection;
     computerWeapon.textContent = computerSelection;
-  } else if (playerSelection === "✊" && computerSelection === "✌") {
+  } else if (
+    (playerSelection === "✊" && computerSelection === "✌") ||
+    (playerSelection === "✌" && computerSelection === "✋") ||
+    (playerSelection === "✋" && computerSelection === "✊")
+  ) {
     gameOver.textContent = "Player wins!";
     playerWeapon.textContent = playerSelection;
     computerWeapon.textContent = computerSelection;
     playerScore++;
-    playerScoreDisplay.innerText = `Player Score = ${playerScore}`;
-  } else if (playerSelection === "✌" && computerSelection === "✊") {
+    playerScoreDisplay.textContent = `Player Score = ${playerScore}`;
+  } else if (
+    (playerSelection === "✌" && computerSelection === "✊") ||
+    (playerSelection === "✋" && computerSelection === "✌") ||
+    (playerSelection === "✊" && computerSelection === "✋")
+  ) {
     gameOver.textContent = "Computer wins!";
     playerWeapon.textContent = playerSelection;
     computerWeapon.textContent = computerSelection;
     computerScore++;
-    computerScoreDisplay.innerText = `Computer Score = ${computerScore}`;
-  } else if (playerSelection === "✌" && computerSelection === "✋") {
-    gameOver.textContent = "Player wins!";
-    playerWeapon.textContent = playerSelection;
-    computerWeapon.textContent = computerSelection;
-    playerScore++;
-    playerScoreDisplay.innerText = `Player Score = ${playerScore}`;
-  } else if (playerSelection === "✋" && computerSelection === "✌") {
-    gameOver.textContent = "Computer wins!";
-    playerWeapon.textContent = playerSelection;
-    computerWeapon.textContent = computerSelection;
-    computerScore++;
-    computerScoreDisplay.innerText = `Computer Score = ${computerScore}`;
-  } else if (playerSelection === "✋" && computerSelection === "✊") {
-    gameOver.textContent = "Player wins!";
-    playerWeapon.textContent = playerSelection;
-    computerWeapon.textContent = computerSelection;
-    playerScore++;
-    playerScoreDisplay.innerText = `Player Score = ${playerScore}`;
-  } else if (playerSelection === "✊" && computerSelection === "✋") {
-    gameOver.textContent = "Computer wins!";
-    playerWeapon.textContent = playerSelection;
-    computerWeapon.textContent = computerSelection;
-    computerScore++;
-    computerScoreDisplay.innerText = `Computer Score = ${computerScore}`;
+    computerScoreDisplay.textContent = `Computer Score = ${computerScore}`;
   }
 }
 
