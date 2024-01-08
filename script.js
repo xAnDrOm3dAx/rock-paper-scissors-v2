@@ -14,21 +14,21 @@ const gameOver = document.querySelector(".game-over");
 //  Add event listeners for individual RPS buttons.
 rockButton.addEventListener("click", () => {
   computerSelection = getComputerChoice();
-  const playerSelection = "✊";
+  const playerSelection = Weapon.ROCK;
   playRound(playerSelection, computerSelection);
   checkForWinner();
 });
 
 scissorsButton.addEventListener("click", () => {
   computerSelection = getComputerChoice();
-  const playerSelection = "✌";
+  const playerSelection = Weapon.SCISSORS;
   playRound(playerSelection, computerSelection);
   checkForWinner();
 });
 
 paperButton.addEventListener("click", () => {
   computerSelection = getComputerChoice();
-  const playerSelection = "✋";
+  const playerSelection = Weapon.PAPER;
   playRound(playerSelection, computerSelection);
   checkForWinner();
 });
