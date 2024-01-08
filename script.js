@@ -4,6 +4,8 @@ const rockButton = document.querySelector(".rock");
 const paperButton = document.querySelector(".paper");
 const scissorsButton = document.querySelector(".scissors");
 const buttons = document.querySelector(".buttons");
+const playerWeapon = document.querySelector(".player-weapon");
+const computerWeapon = document.querySelector(".computer-weapon");
 const outcomeText = document.querySelector(".win-or-lose");
 const playerScoreDisplay = document.querySelector(".player-score");
 const computerScoreDisplay = document.querySelector(".computer-score");
@@ -55,38 +57,43 @@ const computerResult = document.querySelector("#computer-result");
 // START HERE
 function playRound(playerSelection, computerSelection) {
   if (playerSelection === computerSelection) {
-    outcomeText.textContent = `Both players chose ${playerSelection} it's a tie!`;
-    resultsWindow.style.display = "flex";
-    const showPlayerSelection = document.createElement("div");
-    showPlayerSelection.classList.add("player-selection");
-    showPlayerSelection.innerHTML = playerSelection;
-    playerResult.appendChild(showPlayerSelection);
-    // const showPlayerSelection = document.createElement("div");
-    // showPlayerSelection.classList.add(".player-result");
-    // showPlayerSelection.innerHTML = "<h2>Let's Get In Touch</h2>";
-    // createHeaderWrapper.appendChild(createTitle);
+    gameOver.textContent = "It's a tie!";
+    playerWeapon.textContent = playerSelection;
+    computerWeapon.textContent = computerSelection;
   } else if (playerSelection === "✊" && computerSelection === "✌") {
-    outcomeText.textContent = `Computer chose ${computerSelection} Player wins!`;
+    gameOver.textContent = "Player wins!";
+    playerWeapon.textContent = playerSelection;
+    computerWeapon.textContent = computerSelection;
     playerScore++;
     playerScoreDisplay.innerText = `Player Score = ${playerScore}`;
   } else if (playerSelection === "✌" && computerSelection === "✊") {
-    outcomeText.textContent = `Computer chose ${computerSelection} Computer wins!`;
+    gameOver.textContent = "Computer wins!";
+    playerWeapon.textContent = playerSelection;
+    computerWeapon.textContent = computerSelection;
     computerScore++;
     computerScoreDisplay.innerText = `Computer Score = ${computerScore}`;
   } else if (playerSelection === "✌" && computerSelection === "✋") {
-    outcomeText.textContent = `Computer chose ${computerSelection} Player wins!`;
+    gameOver.textContent = "Player wins!";
+    playerWeapon.textContent = playerSelection;
+    computerWeapon.textContent = computerSelection;
     playerScore++;
     playerScoreDisplay.innerText = `Player Score = ${playerScore}`;
   } else if (playerSelection === "✋" && computerSelection === "✌") {
-    outcomeText.textContent = `Computer chose ${computerSelection} Computer wins!`;
+    gameOver.textContent = "Computer wins!";
+    playerWeapon.textContent = playerSelection;
+    computerWeapon.textContent = computerSelection;
     computerScore++;
     computerScoreDisplay.innerText = `Computer Score = ${computerScore}`;
   } else if (playerSelection === "✋" && computerSelection === "✊") {
-    outcomeText.textContent = `Computer chose ${computerSelection} Player wins!`;
+    gameOver.textContent = "Player wins!";
+    playerWeapon.textContent = playerSelection;
+    computerWeapon.textContent = computerSelection;
     playerScore++;
     playerScoreDisplay.innerText = `Player Score = ${playerScore}`;
   } else if (playerSelection === "✊" && computerSelection === "✋") {
-    outcomeText.textContent = `Computer chose ${computerSelection} Computer wins!`;
+    gameOver.textContent = "Computer wins!";
+    playerWeapon.textContent = playerSelection;
+    computerWeapon.textContent = computerSelection;
     computerScore++;
     computerScoreDisplay.innerText = `Computer Score = ${computerScore}`;
   }
@@ -95,11 +102,13 @@ function playRound(playerSelection, computerSelection) {
 function checkForWinner() {
   if (playerScore === 5) {
     buttons.textContent = "";
-    gameOver.textContent = "Game Over... Player has 5 points.";
+    outcomeText.textContent = "Game Over...";
+    gameOver.textContent = "Player has 5 points";
     resetGame();
   } else if (computerScore === 5) {
     buttons.textContent = "";
-    gameOver.textContent = "Game Over... Computer has 5 points.";
+    outcomeText.textContent = "Game Over...";
+    gameOver.textContent = "Computer has 5 points";
     resetGame();
   }
 }
