@@ -86,11 +86,15 @@ function checkForWinner() {
     buttons.textContent = "";
     outcomeText.textContent = "Game Over...";
     gameOver.textContent = "Player has 5 points";
+    playerWeapon.textContent = "🙌";
+    computerWeapon.textContent = "💀";
     resetGame();
   } else if (computerScore === 5) {
     buttons.textContent = "";
     outcomeText.textContent = "Game Over...";
     gameOver.textContent = "Computer has 5 points";
+    playerWeapon.textContent = "💀";
+    computerWeapon.textContent = "🙌";
     resetGame();
   }
 }
