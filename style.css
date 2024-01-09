@@ -36,9 +36,9 @@ h1 {
   align-items: center;
   justify-content: center;
   gap: 0.8rem;
-  border: 3px solid #b46000;
+  border: 2px solid #b46000;
   border-radius: 15px;
-  padding: 1.6rem 0.8rem;
+  padding: 1rem;
   width: 100%;
 
   & p {
@@ -64,7 +64,7 @@ h1 {
 
   button {
     font-family: "Dosis", sans-serif;
-    border: 3px solid #b46000;
+    border: 2px solid #b46000;
     border-radius: 15px;
     width: 70px;
     padding: 10px;
@@ -100,7 +100,7 @@ span {
 .round-results-wrapper {
   width: 100%;
   display: flex;
-  border: 3px solid #b46000;
+  border: 2px solid #b46000;
   border-radius: 15px;
   padding: 0.8rem;
 
