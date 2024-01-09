@@ -20,18 +20,29 @@
 
         <div class="rules-wrapper">
             <h2>GAME RULES:</h2>
-            <p><span>✊</span>Rock<strong> OBLITERATES</strong> Scissors<span>✌</span></p>
-            <p><span>✌</span> Scissors<strong> SHREDS</strong> Paper<span>✋</span></p>
-            <p><span>✋</span> Paper <strong> SMOTHERS</strong> Rock<span>✊</span></p>
-            <p><span>🙌</span>First to <strong>5 points</strong> wins!<span>🙌</span></p>
+            <p>Rock<strong> OBLITERATES</strong> Scissors</p>
+            <p> Scissors<strong> SHREDS</strong> Paper</p>
+            <p> Paper <strong> SMOTHERS</strong> Rock</p>
+            <p>First to <strong>5 points</strong> wins!</p>
         </div>
 
         <h2 class="win-or-lose">CHOOSE YOUR WEAPON!</h2>
 
         <div class="button-wrapper">
-            <button id="weapon-btn" class="rock" data-choice="rock"><span>✊</span></button>
-            <button id="weapon-btn" class="paper" data-choice="paper"><span>✋</span></button>
-            <button id="weapon-btn" class="scissors" data-choice="scissors"><span>✌</span></button>
+            <div class="weapon-btn" data-choice="rock">
+                <button><span>✊</span></button>
+                <p>ROCK</p>
+            </div>
+
+            <div class="weapon-btn" data-choice="paper">
+                <button><span>✋</span></button>
+                <p>PAPER</p>
+            </div>
+
+            <div class="weapon-btn" data-choice="scissors">
+                <button><span>✌</span></button>
+                <p>SCISSORS</p>
+            </div>
             <button class="start-button">START GAME</button>
         </div>
 
