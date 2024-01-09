@@ -18,13 +18,12 @@
     <div class="app-container">
         <h1>Rock <br> Paper <br> Scissors</h1>
 
-        <div class="rules">
+        <div class="rules-wrapper">
             <h2>GAME RULES:</h2>
-            <p><span>✊</span> Rock OBLITERATES Scissors <span>✌</span></p>
-            <p><span>✌</span> Scissors SHREDS Paper <span>✋</span>
-            </p>
-            <p><span>✋</span> Paper SMOTHERS Rock <span>✊</span></p>
-            <h3>First to 5 points wins the game</h3>
+            <p><span>✊</span>Rock<strong> OBLITERATES</strong> Scissors<span>✌</span></p>
+            <p><span>✌</span> Scissors<strong> SHREDS</strong> Paper<span>✋</span></p>
+            <p><span>✋</span> Paper <strong> SMOTHERS</strong> Rock<span>✊</span></p>
+            <p><span>🙌</span>First to <strong>5 points</strong> wins!<span>🙌</span></p>
         </div>
 
         <h2 class="win-or-lose">CHOOSE YOUR WEAPON!</h2>
@@ -33,25 +32,27 @@
             <button id="weapon-btn" class="rock" data-choice="rock"><span>✊</span></button>
             <button id="weapon-btn" class="paper" data-choice="paper"><span>✋</span></button>
             <button id="weapon-btn" class="scissors" data-choice="scissors"><span>✌</span></button>
+            <button class="start-button">START GAME</button>
         </div>
 
-        <div class="round-results" id="round-results">
-            <div class="player-result-wrapper" id="player-result">
-                <h3>Player</h3>
+        <div class="round-results-wrapper">
+            <div class="player-result-wrapper">
+                <h2>PLAYER</h2>
                 <div class="player-weapon">🎲</div>
             </div>
-            <div class="computer-result-wrapper" id="computer-result">
-                <h3>Computer</h3>
+            <div class="computer-result-wrapper">
+                <h2>COMPUTER</h2>
                 <div class="computer-weapon">🎲</div>
             </div>
         </div>
 
         <h2 class="game-over">PREPARE FOR BATTLE!</h2>
 
-        <div class="results">
+        <div class="score-wrapper">
             <p class="player-score">Player Score = 0</p>
             <p class="computer-score">Computer Score = 0</p>
         </div>
+
         <footer>
             <p class="copyright">© 2023 Christopher Werkmeister</p>
         </footer>
