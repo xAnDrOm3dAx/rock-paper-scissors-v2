@@ -7,7 +7,7 @@ const playerWeapon = document.querySelector(".player-weapon");
 const computerWeapon = document.querySelector(".computer-weapon");
 const outcomeText = document.querySelector(".win-or-lose");
 const gameOver = document.querySelector(".game-over");
-const weaponBtns = document.querySelectorAll(".weapon-btn");
+const weaponButtons = document.querySelectorAll(".weapon-btn");
 const playerScoreDisplay = document.querySelector(".player-score");
 const computerScoreDisplay = document.querySelector(".computer-score");
 
@@ -20,12 +20,6 @@ scissorsButton.addEventListener("click", () => {
 paperButton.addEventListener("click", () => {
   handlePlayerChoice(Weapon.PAPER);
 });
-
-function handlePlayerChoice(playerSelection) {
-  computerSelection = getComputerChoice();
-  playRound(playerSelection, computerSelection);
-  checkForWinner();
-}
 
 startButton.addEventListener("click", () => {
   resetGame();
@@ -78,10 +72,16 @@ function playRound(playerSelection, computerSelection) {
   }
 }
 
+function handlePlayerChoice(playerSelection) {
+  computerSelection = getComputerChoice();
+  playRound(playerSelection, computerSelection);
+  checkForWinner();
+}
+
 function checkForWinner() {
   const winningThreshold = 5;
   if (playerScore === winningThreshold) {
-    weaponBtns.forEach((button) => {
+    weaponButtons.forEach((button) => {
       button.classList.add("hidden");
     });
     startButton.style.display = "block";
@@ -90,7 +90,7 @@ function checkForWinner() {
     // playerWeapon.textContent = "🙌";
     // computerWeapon.textContent = "💀";
   } else if (computerScore === winningThreshold) {
-    weaponBtns.forEach((button) => {
+    weaponButtons.forEach((button) => {
       button.classList.add("hidden");
     });
     startButton.style.display = "block";
@@ -111,7 +111,7 @@ function resetGame() {
   computerScoreDisplay.textContent = `Computer Score = ${computerScore}`;
   computerWeapon.textContent = "🎲";
   startButton.style.display = "none";
-  weaponBtns.forEach((button) => {
+  weaponButtons.forEach((button) => {
     button.classList.remove("hidden");
   });
 }
