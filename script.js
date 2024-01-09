@@ -1,15 +1,16 @@
 // Grab all necessary elements
-
 const rockButton = document.querySelector(".rock");
 const paperButton = document.querySelector(".paper");
 const scissorsButton = document.querySelector(".scissors");
-const buttons = document.querySelector(".buttons");
+const buttons = document.querySelector(".button-wrapper");
+const startButton = document.querySelector(".start-button");
 const playerWeapon = document.querySelector(".player-weapon");
 const computerWeapon = document.querySelector(".computer-weapon");
 const outcomeText = document.querySelector(".win-or-lose");
-const playerScoreDisplay = document.querySelector(".player-score");
-const computerScoreDisplay = document.querySelector(".computer-score");
 const gameOver = document.querySelector(".game-over");
+const weaponBtns = document.querySelectorAll("#weapon-btn");
+let playerScoreDisplay = document.querySelector(".player-score");
+let computerScoreDisplay = document.querySelector(".computer-score");
 
 //  Add event listeners for individual RPS buttons.
 rockButton.addEventListener("click", () => {
@@ -31,6 +32,10 @@ paperButton.addEventListener("click", () => {
   const playerSelection = Weapon.PAPER;
   playRound(playerSelection, computerSelection);
   checkForWinner();
+});
+
+startButton.addEventListener("click", () => {
+  resetGame();
 });
 
 // Initialize scores at 0
@@ -81,31 +86,40 @@ function playRound(playerSelection, computerSelection) {
 }
 
 function checkForWinner() {
-  const WINNING_THRESHOLD = 5;
-  if (playerScore === WINNING_THRESHOLD) {
-    buttons.textContent = "";
+  const winningThreshold = 5;
+  if (playerScore === winningThreshold) {
+    weaponBtns.forEach((button) => {
+      button.style.display = "none";
+    });
+    startButton.style.display = "block";
     outcomeText.textContent = "Game Over...";
     gameOver.textContent = "Player has 5 points";
     playerWeapon.textContent = "🙌";
     computerWeapon.textContent = "💀";
-    resetGame();
-  } else if (computerScore === 5) {
-    buttons.textContent = "";
+  } else if (computerScore === winningThreshold) {
+    weaponBtns.forEach((button) => {
+      button.style.display = "none";
+    });
+    startButton.style.display = "block";
     outcomeText.textContent = "Game Over...";
     gameOver.textContent = "Computer has 5 points";
     playerWeapon.textContent = "💀";
     computerWeapon.textContent = "🙌";
-    resetGame();
   }
 }
 
 function resetGame() {
-  const startButton = document.createElement("button");
-  startButton.classList.add("start-button");
-  startButton.textContent = "START GAME";
-  buttons.appendChild(startButton);
-  startButton.addEventListener("click", () => {
-    window.location.reload(); // Reload the page when start button is clicked
+  outcomeText.textContent = "CHOOSE YOUR WEAPON!";
+  gameOver.textContent = "PREPARE FOR BATTLE!";
+  playerScore = 0;
+  playerScoreDisplay.textContent = `Player Score = ${playerScore}`;
+  playerWeapon.textContent = "🎲";
+  computerScore = 0;
+  computerScoreDisplay.textContent = `Computer Score = ${computerScore}`;
+  computerWeapon.textContent = "🎲";
+  startButton.style.display = "none";
+  weaponBtns.forEach((button) => {
+    button.style.display = "flex";
   });
 }
 
