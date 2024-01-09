@@ -8,8 +8,8 @@ const computerWeapon = document.querySelector(".computer-weapon");
 const outcomeText = document.querySelector(".win-or-lose");
 const gameOver = document.querySelector(".game-over");
 const weaponBtns = document.querySelectorAll("#weapon-btn");
-let playerScoreDisplay = document.querySelector(".player-score");
-let computerScoreDisplay = document.querySelector(".computer-score");
+const playerScoreDisplay = document.querySelector(".player-score");
+const computerScoreDisplay = document.querySelector(".computer-score");
 
 //  Add event listeners for individual RPS buttons.
 rockButton.addEventListener("click", () => {
