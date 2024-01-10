@@ -125,6 +125,14 @@ span {
   }
 }
 
+.animation-player {
+  animation: slide-in-left 150ms ease-in;
+}
+
+.animation-computer {
+  animation: slide-in-right 150ms ease-in;
+}
+
 .score-wrapper {
   text-align: center;
   font-size: 1.6rem;
@@ -133,4 +141,29 @@ span {
 
 .copyright {
   margin-bottom: 30px;
+}
+
+/* keyframes */
+@keyframes slide-in-left {
+  from {
+    transform: translateX(-500px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-in-right {
+  from {
+    transform: translateX(500px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }

@@ -36,6 +36,19 @@ const Weapon = {
   SCISSORS: "✌",
 };
 
+function handlePlayerChoice(playerSelection) {
+  playerWeapon.classList.add("animation-player");
+  computerWeapon.classList.add("animation-computer");
+  computerSelection = getComputerChoice();
+  playRound(playerSelection, computerSelection);
+  setTimeout(() => {
+    // Delay slightly to allow animation to play
+    playerWeapon.classList.remove("animation-player");
+    computerWeapon.classList.remove("animation-computer");
+  }, 150); // Adjust the delay as needed based on animation duration
+  checkForWinner();
+}
+
 // Create function called getComputerChoice that will randomly return either ‘Rock’, ‘Paper’ or ‘Scissors’.
 function getComputerChoice() {
   const weapons = [Weapon.ROCK, Weapon.PAPER, Weapon.SCISSORS];
@@ -72,12 +85,6 @@ function playRound(playerSelection, computerSelection) {
   }
 }
 
-function handlePlayerChoice(playerSelection) {
-  computerSelection = getComputerChoice();
-  playRound(playerSelection, computerSelection);
-  checkForWinner();
-}
-
 function checkForWinner() {
   const winningThreshold = 5;
   if (playerScore === winningThreshold) {
@@ -87,8 +94,6 @@ function checkForWinner() {
     startButton.style.display = "block";
     outcomeText.textContent = "GAME OVER...";
     gameOver.textContent = "Player has 5 points";
-    // playerWeapon.textContent = "🙌";
-    // computerWeapon.textContent = "💀";
   } else if (computerScore === winningThreshold) {
     weaponButtons.forEach((button) => {
       button.classList.add("hidden");
@@ -96,8 +101,6 @@ function checkForWinner() {
     startButton.style.display = "block";
     outcomeText.textContent = "GAME OVER...";
     gameOver.textContent = "Computer has 5 points";
-    // playerWeapon.textContent = "💀";
-    // computerWeapon.textContent = "🙌";
   }
 }
 
