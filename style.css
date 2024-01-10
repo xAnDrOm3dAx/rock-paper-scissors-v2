@@ -126,11 +126,11 @@ span {
 }
 
 .animation-player {
-  animation: slide-in-left 150ms ease-in;
+  animation: slide-in-left 200ms ease-in;
 }
 
 .animation-computer {
-  animation: slide-in-right 150ms ease-in;
+  animation: slide-in-right 200ms ease-in;
 }
 
 .score-wrapper {

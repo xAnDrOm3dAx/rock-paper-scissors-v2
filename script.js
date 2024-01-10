@@ -45,7 +45,7 @@ function handlePlayerChoice(playerSelection) {
     // Delay slightly to allow animation to play
     playerWeapon.classList.remove("animation-player");
     computerWeapon.classList.remove("animation-computer");
-  }, 150); // Adjust the delay as needed based on animation duration
+  }, 205); // Adjust the delay as needed based on animation duration
   checkForWinner();
 }
 
