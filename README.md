@@ -61,7 +61,11 @@ There's dedicated channels for feedback ⁠creations-showcase ⁠feedback-tradin
 
 Technologies Used: Javascript, HTML5, CSS3
 
+<<<<<<< HEAD
 Introduction: Revisited this project to revamp the UI and refactor the code to be more efficient and to conform to best practice. 
+=======
+Introduction: Revisiting this project to add a UI and make the game interactive.
+>>>>>>> parent of 4bba8bb (update readme)
 
 ## Lessons Learned
 
