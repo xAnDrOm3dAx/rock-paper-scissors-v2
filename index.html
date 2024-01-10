@@ -15,26 +15,59 @@
 </head>
 
 <body>
-    <h1>Rock Paper Scissors</h1>
+    <div class="app-container">
+        <h1>Rock <br> Paper <br> Scissors</h1>
 
-    <p class="rules"> <strong>GAME RULES:</strong> <br> <br> 🪨 Rock OBLITERATES Scissors ✂️ <br> ✂️ Scissors SHREDS
-        Paper 📜 <br> 📜
-        Paper
-        SMOTHERS Rock 🪨</p>
-    <h3 class="win-or-lose">CHOOSE YOUR WEAPON</h3>
-    <div class="buttons">
-        <button class="rock" data-choice="rock">ROCK</button>
-        <button class="paper" data-choice="paper">PAPER</button>
-        <button class="scissors" data-choice="scissors">SCISSORS</button>
+        <div class="rules-wrapper">
+            <h2>GAME RULES:</h2>
+            <p>Rock<strong> OBLITERATES</strong> Scissors</p>
+            <p> Scissors<strong> SHREDS</strong> Paper</p>
+            <p> Paper <strong> SMOTHERS</strong> Rock</p>
+            <p>First to <strong>5 points</strong> wins!</p>
+        </div>
+
+        <h2 class="win-or-lose">CHOOSE YOUR WEAPON!</h2>
+
+        <div class="button-wrapper">
+            <div class="weapon-btn" data-choice="rock">
+                <button><span>✊</span></button>
+                <h5>ROCK</h5>
+            </div>
+
+            <div class="weapon-btn" data-choice="paper">
+                <button><span>✋</span></button>
+                <h5>PAPER</h5>
+            </div>
+
+            <div class="weapon-btn" data-choice="scissors">
+                <button><span>✌</span></button>
+                <h5>SCISSORS</h5>
+            </div>
+            <button class="start-button">START GAME</button>
+        </div>
+
+        <div class="round-results-wrapper">
+            <div class="player-result-wrapper">
+                <h2>PLAYER</h2>
+                <div class="player-weapon">🎲</div>
+            </div>
+            <div class="computer-result-wrapper">
+                <h2>COMPUTER</h2>
+                <div class="computer-weapon">🎲</div>
+            </div>
+        </div>
+
+        <h2 class="game-over">PREPARE FOR BATTLE!</h2>
+
+        <div class="score-wrapper">
+            <p class="player-score">Player Score = 0</p>
+            <p class="computer-score">Computer Score = 0</p>
+        </div>
+
+        <footer>
+            <p class="copyright">© 2023 Christopher Werkmeister</p>
+        </footer>
     </div>
-    <h3 class="game-over">First to 5 points wins the game</h3>
-
-    <div class="results">
-        <p class="player-score">Player Score = 0</p>
-        <p class="computer-score">Computer Score = 0</p>
-    </div>
-
-    <p class="copyright">© 2023 Christopher Werkmeister</p>
 </body>
 
 </html>
