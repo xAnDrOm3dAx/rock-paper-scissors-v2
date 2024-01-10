@@ -31,9 +31,9 @@ let computerScore = 0;
 
 // Create an Enum which holds three properties and thier values which represent rock, paper ands scissors.
 const Weapon = {
-  ROCK: "✊",
-  PAPER: "✋",
-  SCISSORS: "✌",
+  ROCK: "✊🏼",
+  PAPER: "🤚🏼",
+  SCISSORS: "✌🏼",
 };
 
 function handlePlayerChoice(playerSelection) {
