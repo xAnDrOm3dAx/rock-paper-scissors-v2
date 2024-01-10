@@ -50,10 +50,9 @@ h1 {
 }
 
 .button-wrapper {
-  width: 100%;
   display: flex;
-  flex-direction: row;
   justify-content: space-around;
+  align-items: center;
   width: 100%;
   height: 80px;
 
@@ -84,7 +83,7 @@ h1 {
   }
 
   .start-button {
-    font-size: 1.5rem;
+    font-size: 2rem;
     width: fit-content;
     color: white;
     display: none;
@@ -125,12 +124,8 @@ span {
   }
 }
 
-.animation-player {
-  animation: slide-in-left 200ms ease-in;
-}
-
-.animation-computer {
-  animation: slide-in-right 200ms ease-in;
+.weapon-animation {
+  animation: grow 200ms ease-in-out;
 }
 
 .score-wrapper {
@@ -144,26 +139,19 @@ span {
 }
 
 /* keyframes */
-@keyframes slide-in-left {
-  from {
-    transform: translateX(-500px);
+@keyframes grow {
+  0% {
+    transform: scale(0);
     opacity: 0;
   }
 
-  to {
-    transform: translateX(0);
+  70% {
+    transform: scale(1.6);
     opacity: 1;
   }
-}
 
-@keyframes slide-in-right {
-  from {
-    transform: translateX(500px);
-    opacity: 0;
-  }
-
-  to {
-    transform: translateX(0);
+  100% {
+    transform: scale(1);
     opacity: 1;
   }
 }
