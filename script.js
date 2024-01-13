@@ -92,21 +92,21 @@ function checkForWinner() {
       button.classList.add("hidden");
     });
     startButton.style.display = "block";
-    outcomeText.textContent = "GAME OVER...";
+    outcomeText.textContent = "Game Over...";
     gameOver.textContent = "Player has 5 points";
   } else if (computerScore === winningThreshold) {
     weaponButtons.forEach((button) => {
       button.classList.add("hidden");
     });
     startButton.style.display = "block";
-    outcomeText.textContent = "GAME OVER...";
+    outcomeText.textContent = "Game Over...";
     gameOver.textContent = "Computer has 5 points";
   }
 }
 
 function resetGame() {
-  outcomeText.textContent = "CHOOSE YOUR WEAPON!";
-  gameOver.textContent = "PREPARE FOR BATTLE!";
+  outcomeText.textContent = "Choose Your Weapon!";
+  gameOver.textContent = "Prepare For Battle!";
   playerScore = 0;
   playerScoreDisplay.textContent = `Player Score = ${playerScore}`;
   playerWeapon.textContent = "🎲";
