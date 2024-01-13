@@ -42,7 +42,7 @@ function handlePlayerChoice(playerSelection) {
   computerSelection = getComputerChoice();
   playRound(playerSelection, computerSelection);
   setTimeout(() => {
-    // Delay slightly to allow animation to play before removing class
+    // Delay slightly to allow animation to play
     playerWeapon.classList.remove("weapon-animation");
     computerWeapon.classList.remove("weapon-animation");
   }, 200); // Adjust the delay as needed based on animation duration
@@ -67,7 +67,7 @@ function playRound(playerSelection, computerSelection) {
     (playerSelection === Weapon.SCISSORS && computerSelection === Weapon.PAPER) ||
     (playerSelection === Weapon.PAPER && computerSelection === Weapon.ROCK)
   ) {
-    gameOver.textContent = "Player wins the round!";
+    gameOver.textContent = "Player wins!";
     playerWeapon.textContent = playerSelection;
     computerWeapon.textContent = computerSelection;
     playerScore++;
@@ -77,7 +77,7 @@ function playRound(playerSelection, computerSelection) {
     (playerSelection === Weapon.PAPER && computerSelection === Weapon.SCISSORS) ||
     (playerSelection === Weapon.ROCK && computerSelection === Weapon.PAPER)
   ) {
-    gameOver.textContent = "Computer wins the round!";
+    gameOver.textContent = "Computer wins!";
     playerWeapon.textContent = playerSelection;
     computerWeapon.textContent = computerSelection;
     computerScore++;
@@ -93,20 +93,20 @@ function checkForWinner() {
     });
     startButton.style.display = "block";
     outcomeText.textContent = "GAME OVER...";
-    gameOver.textContent = "Player wins the game!";
+    gameOver.textContent = "Player has 5 points";
   } else if (computerScore === winningThreshold) {
     weaponButtons.forEach((button) => {
       button.classList.add("hidden");
     });
     startButton.style.display = "block";
     outcomeText.textContent = "GAME OVER...";
-    gameOver.textContent = "Computer wins the game!";
+    gameOver.textContent = "Computer has 5 points";
   }
 }
 
 function resetGame() {
-  outcomeText.textContent = "Choose Your Weapon!";
-  gameOver.textContent = "Prepare For Battle!";
+  outcomeText.textContent = "CHOOSE YOUR WEAPON!";
+  gameOver.textContent = "PREPARE FOR BATTLE!";
   playerScore = 0;
   playerScoreDisplay.textContent = `Player Score = ${playerScore}`;
   playerWeapon.textContent = "🎲";
