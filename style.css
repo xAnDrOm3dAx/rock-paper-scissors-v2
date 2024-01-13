@@ -6,7 +6,6 @@
 }
 
 body {
-  display: flex;
   color: white;
   font-family: "Dosis", sans-serif;
   min-height: 100vh;
