@@ -39,12 +39,14 @@ const Weapon = {
 function handlePlayerChoice(playerSelection) {
   playerWeapon.classList.add("weapon-animation");
   computerWeapon.classList.add("weapon-animation");
+  gameOver.classList.add("weapon-animation");
   computerSelection = getComputerChoice();
   playRound(playerSelection, computerSelection);
   setTimeout(() => {
     // Delay slightly to allow animation to play
     playerWeapon.classList.remove("weapon-animation");
     computerWeapon.classList.remove("weapon-animation");
+    gameOver.classList.remove("weapon-animation");
   }, 200); // Adjust the delay as needed based on animation duration
   checkForWinner();
 }
