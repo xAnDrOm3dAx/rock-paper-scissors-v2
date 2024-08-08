@@ -14,7 +14,7 @@ body {
   margin: 0 1rem;
 }
 
-.app-container {
+/* .app-container {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -22,6 +22,31 @@ body {
   gap: 1.2rem;
   width: 320px;
   margin: 0 auto;
+
+  @media (max-width: 375px) {
+    
+  }
+} */
+
+.app-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  gap: 1.2rem;
+  max-width: 420px;
+  width: 100%;
+  margin: 0 auto;
+  align-content: center;
+  justify-content: center;
+  text-align: center;
+
+  @media (min-width: 768px) {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    max-width: 840px;
+  }
+
+
 }
 
 h1 {
@@ -29,6 +54,13 @@ h1 {
   margin: 1.6rem 0 0;
   text-align: center;
   font-family: "Rubik Scribble", system-ui;
+
+  @media (min-width: 768px) {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 }
 
 .rules-wrapper {
@@ -52,12 +84,20 @@ h1 {
 
 .button-wrapper {
   display: flex;
-  justify-content: space-around;
+  flex-direction: column;
   align-items: center;
+  justify-content: center;
   width: 100%;
+  gap: 1rem;
 
-  & div {
-    text-align: center;
+  .weapon-wrapper {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+
+    & div {
+      text-align: center;
+    }
   }
 
   button {
@@ -101,6 +141,7 @@ span {
 .round-results-wrapper {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   gap: 1.2rem;
   width: 100%;
   border: 2px solid #b46000;
