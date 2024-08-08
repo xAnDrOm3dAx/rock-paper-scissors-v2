@@ -105,6 +105,18 @@ h1 {
     & div {
       text-align: center;
     }
+
+    .weapon-btn {
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+  }
+
+  .win-or-lose {
+    @media (min-width: 768px) {
+      font-size: 2.4rem;
+    }
   }
 
   button {
@@ -129,10 +141,6 @@ h1 {
     background-color: #be7100;
   }
 
-  .hidden {
-    display: none;
-  }
-
   .start-button {
     font-size: 1.2rem;
     font-weight: 600;
@@ -153,6 +161,10 @@ h1 {
 span {
   font-size: 2rem;
   line-height: 1.2;
+
+  @media (min-width: 768px) {
+    font-size: 3rem;
+  }
 }
 
 .round-results-wrapper {
