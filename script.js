@@ -91,14 +91,14 @@ function checkForWinner() {
   const winningThreshold = 5;
   if (playerScore === winningThreshold) {
     weaponButtons.forEach((button) => {
-      button.classList.add("hidden");
+      button.style.display = "none";
     });
     startButton.style.display = "block";
     outcomeText.textContent = "Game Over...";
     gameOver.textContent = "Player has 5 points";
   } else if (computerScore === winningThreshold) {
     weaponButtons.forEach((button) => {
-      button.classList.add("hidden");
+      button.style.display = "none";
     });
     startButton.style.display = "block";
     outcomeText.textContent = "Game Over...";
@@ -117,6 +117,6 @@ function resetGame() {
   computerWeapon.textContent = "🎲";
   startButton.style.display = "none";
   weaponButtons.forEach((button) => {
-    button.classList.remove("hidden");
+    button.style.display = "flex";
   });
 }
