@@ -134,9 +134,7 @@ h1 {
     background: transparent;
     transition: ease-in-out 250ms;
 
-    @media (min-width: 768px) {
-      border: none
-    }
+    @media (min-width: 768px) {}
   }
 
   button:hover {
@@ -161,12 +159,8 @@ h1 {
 }
 
 span {
-  font-size: 2rem;
+  font-size: 3rem;
   line-height: 1.2;
-
-  @media (min-width: 768px) {
-    font-size: 3rem;
-  }
 }
 
 .round-results-wrapper {
@@ -218,9 +212,14 @@ span {
   font-size: 1.2rem;
 }
 
-.copyright {
-  margin: 0 0 1.2rem;
+footer {
+  grid-column: 1 / -1;
+
+  .copyright {
+    margin: 0 0 1.2rem;
+  }
 }
+
 
 /* keyframes */
 @keyframes grow {
