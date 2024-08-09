@@ -14,20 +14,6 @@ body {
   margin: 0 1rem;
 }
 
-/* .app-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 1.2rem;
-  width: 320px;
-  margin: 0 auto;
-
-  @media (max-width: 375px) {
-    
-  }
-} */
-
 .app-container {
   display: grid;
   grid-template-columns: 1fr;
@@ -45,8 +31,6 @@ body {
     grid-template-rows: auto auto;
     max-width: 840px;
   }
-
-
 }
 
 h1 {
@@ -76,11 +60,29 @@ h1 {
   padding: 1.2rem;
   width: 100%;
 
+  h2 {
+    font-size: 2rem;
+  }
+
   & p {
     display: flex;
     align-items: center;
     gap: 0.3rem;
     font-size: 1.2rem;
+
+    span {
+      font-size: 1.2rem;
+      color: #e97d01;
+      font-weight: 600;
+    }
+  }
+
+  @media (min-width: 768px) {
+
+    p,
+    p>span {
+      font-size: 1.6rem;
+    }
   }
 }
 
@@ -95,12 +97,7 @@ h1 {
   .weapon-wrapper {
     display: flex;
     width: 100%;
-    justify-content: space-around;
-
-    @media (min-width: 768px) {
-      width: auto;
-      gap: 1rem;
-    }
+    justify-content: space-evenly;
 
     & div {
       text-align: center;
